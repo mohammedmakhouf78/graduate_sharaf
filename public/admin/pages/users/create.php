@@ -1,11 +1,6 @@
 <?php
 
-session_start();
-
-
-include $_SERVER['DOCUMENT_ROOT'] . "/functions/frontFunctions.php";
-
-include $_SERVER['DOCUMENT_ROOT'] . "/functions/backFunctions.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
 
@@ -42,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/backFunctions.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Creat User</h3>
+            <h3 class="card-title">إنشاء مستخدم</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
@@ -64,37 +59,37 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/backFunctions.php";
             <form id="quickForm" action="<?= getCntrollor("admin/users/create.php"); ?>" method="post">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="name">Name</label>
+                  <label for="name">الأسم</label>
                   <input type="text" name="name" class="form-control" id="name">
                   <?php if (isset($_SESSION['errors']['name'])) : ?>
                     <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
                   <?php endif ?>
                 </div>
                 <div class="form-group">
-                  <label for="Password">Password</label>
-                  <input type="password" name="password" class="form-control" id="Password">
-                  <?php if (isset($_SESSION['errors']['password'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['password'] ?></p>
-                  <?php endif ?>
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
+                  <label for="email">البريد الإلكتروني</label>
                   <input type="email" name="email" class="form-control" id="email">
                   <?php if (isset($_SESSION['errors']['email'])) : ?>
                     <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
                   <?php endif ?>
                 </div>
+                <div class="form-group">
+                  <label for="Password">كلمة المرور</label>
+                  <input type="password" name="password" class="form-control" id="Password">
+                  <?php if (isset($_SESSION['errors']['password'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['password'] ?></p>
+                  <?php endif ?>
+                </div>
                 <div class="form-group mb-0">
                   <div class="custom-control custom-checkbox">
                     <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1">
-                    <label class="custom-control-label" for="is_admin">Is_Admin ?</label>
+                    <label class="custom-control-label" for="is_admin">هل هو مشرف</label>
                   </div>
                 </div>
               </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">إرسال</button>
           </div>
           </form>
         </div>

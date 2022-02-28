@@ -1,6 +1,5 @@
 <?php
 
-include_once __DIR__. '/../setting.php';
 
 function getCntrollor($path){
     
