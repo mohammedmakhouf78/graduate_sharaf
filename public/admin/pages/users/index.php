@@ -1,13 +1,9 @@
 <?php
 
-session_start();
 
 
-include $_SERVER['DOCUMENT_ROOT'] . "/functions/frontFunctions.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
-include $_SERVER['DOCUMENT_ROOT'] . "/functions/backFunctions.php";
-
-include $_SERVER['DOCUMENT_ROOT'] . "/functions/DBFunctions.php";
 
 $users = select($conn, "users", "*");
 
@@ -46,7 +42,7 @@ $users = select($conn, "users", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Creat User</h3>
+                            <h3 class="card-title">بيانات المستخدمين</h3>
                         </div>
 
 
@@ -67,11 +63,11 @@ $users = select($conn, "users", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Is_admin</th>
-                                        <th>controler</th>
+                                        <th>الرقم</th>
+                                        <th>الأسم</th>
+                                        <th>البريد الإلكتروني</th>
+                                        <th>هل هو مشرف</th>
+                                        <th>التحكم</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -83,7 +79,7 @@ $users = select($conn, "users", "*");
                                             <td><?= $user['email'] ?></td>
                                             <td><?= $user['is_admin'] ?></td>
                                             <td>
-                                                <a class="btn btn-success" href="<?= getCntrollor("admin/users/update.php"); ?>">تعديل</a>
+                                                <a class="btn btn-success" href="<?= getpage("users/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
                                                 <a class="btn btn-danger" href="<?= getCntrollor("admin/users/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
@@ -92,11 +88,11 @@ $users = select($conn, "users", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Is_admin</th>
-                                        <th>controler</th>
+                                        <th>الرقم</th>
+                                        <th>الأسم</th>
+                                        <th>البريد الإلكتروني</th>
+                                        <th>هل هو مشرف</th>
+                                        <th>التحكم</th>
                                     </tr>
                                 </tfoot>
                             </table>

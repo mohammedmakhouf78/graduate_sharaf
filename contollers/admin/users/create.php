@@ -1,8 +1,6 @@
 <?php
-include __DIR__ . "/../../../functions/backFunctions.php";
-include __DIR__ . "/../../../functions/function.php";
-include __DIR__ . "/../../../functions/DBFunctions.php";
 
+include __DIR__ . "/../../../functions/function.php";
 
 
 if (isset($_POST['name'])) {

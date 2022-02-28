@@ -1,7 +1,5 @@
 <?php
-include __DIR__ . "/../../../functions/backFunctions.php";
 include __DIR__ . "/../../../functions/function.php";
-include __DIR__ . "/../../../functions/DBFunctions.php";
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

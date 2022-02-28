@@ -1,9 +1,5 @@
 <?php
 
-include __DIR__.'/../setting.php';
-
-
-
 
 
 /**
@@ -12,11 +8,10 @@ include __DIR__.'/../setting.php';
  * @param  mixed $path
  * @return void بتجيب المسار الخاص بالفرونت اند من خلال السيرفر
  */
-function asset(string $path){
+function asset(string $path)
+{
 
     return "/public/assets/$path";
-
-
 }
 
 /**
@@ -25,17 +20,13 @@ function asset(string $path){
  * @param  mixed $path
  * @return void
  */
-function layouts( $path){
+function layouts($path)
+{
 
-    return ROOT ."/public/admin/layouts/$path";
-
-
+    return ROOT . "/public/admin/layouts/$path";
 }
 
-
-
-?>
-
-
-
-
+function getUrl()
+{
+    return $_SERVER['REQUEST_URI'];
+}

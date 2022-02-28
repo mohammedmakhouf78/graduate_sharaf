@@ -1,8 +1,8 @@
 <?php
 
 
-include $_SERVER['DOCUMENT_ROOT'] . "/functions/frontFunctions.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/functions/backFunctions.php";
+
+include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 include layouts("header.php");
 

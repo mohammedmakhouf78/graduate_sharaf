@@ -1,5 +1,11 @@
 <?php
+include __DIR__."/../setting.php";
+
 session_start();
+
+include __DIR__."/frontFunctions.php";
+include __DIR__."/backFunctions.php";
+include __DIR__."/DBFunctions.php";
 
 function validateString($data,$name,$message,$path){
     $data=test_input($data);
