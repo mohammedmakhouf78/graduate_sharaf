@@ -68,6 +68,44 @@
           </ul>
         </li>
 
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+          
+            <i class="far fa-address-card nav-icon"></i>
+           
+            <p>
+              حول المواقع
+              <i class="right fas fa-angle-left"></i>
+             
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="<?= getpage("about/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("about/create.php") ? 'active' : '' ?>">
+              <i class="far fa-edit nav-icon"></i>
+
+                
+              
+                <p>إدخال بيانات</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("about/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("about/index.php") ? 'active' : ''?>">
+             
+              <i class="fas fa-users nav-icon"></i>
+              
+                <p>إظهار بيانات المواقع</p>
+              </a>
+            </li>
+
+
+
+          </ul>
+        </li>
+
+        
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
