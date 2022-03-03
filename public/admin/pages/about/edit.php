@@ -3,7 +3,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $OldData = selectWhere($conn, 'users', '*', "id = $id")[0];
+    $OldData = selectWhere($conn, 'about', '*', "id = $id")[0];
 }
 ?>
 
@@ -40,9 +40,9 @@ if (isset($_GET['id'])) {
                 <!-- jquery validation -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">تعديل المستخدم</h3>
+                        <h3 class="card-title">تعديل الأخبار</h3>
                     </div>
-                     <!-- ليس لها اي فائده -->
+                      <!-- ليس لها اي فائده -->
                     <div>
                         <?php if (isset($_SESSION['successful']["db"])) :  ?>
 
@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
 
                         <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
-                            <div class='alert alert-danger'>خطاء في التسجيل</div>
+                            <div class='alert alert-danger'>خطاء في التعديل</div>
 
                         <?php endif; ?>
 
@@ -60,36 +60,43 @@ if (isset($_GET['id'])) {
                     <div class="card-body">
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="quickForm" action="<?= getCntrollor("admin/users/update.php"); ?>" method="post">
+                        <form id="quickForm" action="<?= getCntrollor("admin/about/update.php"); ?>" method="post">
                             <div class="card-body">
                                 <input type="hidden" name="id" value="<?= $OldData['id'] ?>">
                                 <div class="form-group">
-                                    <label for="name">الأسم</label>
-                                    <input type="text" name="name" class="form-control" id="name" value="<?= $OldData['name'] ?>">
-                                    <?php if (isset($_SESSION['errors']['name'])) : ?>
-                                        <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
+                                    <label for="address">العنوان</label>
+                                    <input type="text" name="address" class="form-control" id="address" value="<?= $OldData['address'] ?>">
+                                    <?php if (isset($_SESSION['errors']['address'])) : ?>
+                                        <p class="text-danger"><?= $_SESSION['errors']['address'] ?></p>
                                     <?php endif ?>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">البريد الإلكتروني</label>
+                                    <label for="phone">التلفون</label>
+                                    <input type="text" name="phone" class="form-control" id="phone" value="<?= $OldData['phone'] ?>">
+                                    <?php if (isset($_SESSION['errors']['phone'])) : ?>
+                                        <p class="text-danger"><?= $_SESSION['errors']['phone'] ?></p>
+                                    <?php endif ?>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">البريد الالكتروني</label>
                                     <input type="email" name="email" class="form-control" id="email" value="<?= $OldData['email'] ?>">
                                     <?php if (isset($_SESSION['errors']['email'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
                                     <?php endif ?>
                                 </div>
                                 <div class="form-group">
-                                    <label for="Password">كلمة المرور</label>
-                                    <input type="password" name="password" class="form-control" id="Password" value="<?= $OldData['password'] ?>">
-                                    <?php if (isset($_SESSION['errors']['password'])) : ?>
-                                        <p class="text-danger"><?= $_SESSION['errors']['password'] ?></p>
+                                    <label for="open">الفتح</label>
+                                    <input type="time" id="open" class="form-control" value="<?= $OldData['open'] ?>" name="open">
+                                    <?php if (isset($_SESSION['errors']['open'])) : ?>
+                                        <p class="text-danger"><?= $_SESSION['errors']['open'] ?></p>
                                     <?php endif ?>
                                 </div>
-
-                                <div class="form-group mb-0">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1" value="1" <?= $OldData['is_admin'] == 1 ? 'checked' : '' ?>>
-                                        <label class="custom-control-label" for="is_admin">هل هو مشرف</label>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="close">الاغلاق</label>
+                                    <input type="time" id="close" class="form-control"  value="<?= $OldData['close'] ?>" name="close">
+                                    <?php if (isset($_SESSION['errors']['close'])) : ?>
+                                        <p class="text-danger"><?= $_SESSION['errors']['close'] ?></p>
+                                    <?php endif ?>
                                 </div>
                             </div>
                     </div>
@@ -105,19 +112,14 @@ if (isset($_GET['id'])) {
             <!-- right column -->
 
 
+        </div>
+        <!-- /.card -->
+</div>
+<!--/.col (left) -->
+<!-- right column -->
 
-
-
-
-
-
-
-
-
-
-
-    </section>
-    <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 

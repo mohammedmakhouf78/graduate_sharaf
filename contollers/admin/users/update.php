@@ -32,7 +32,7 @@ if (isset($_POST['name'])) {
 
 
     if ($result) {
-        addSuccessToSession("db", "Users Updataed Successfully");
+        addSuccessToSession("db", "تم التعديل بنجاح");
     } else {
         addErrorsToSession("db", "there was an error sorry ");
     }
