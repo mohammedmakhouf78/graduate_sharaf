@@ -5,7 +5,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$abouts = select($conn, "about", "*");
+$news = select($conn, "news", "*");
 
 
 ?>
@@ -42,7 +42,7 @@ $abouts = select($conn, "about", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات الموقع</h3>
+                            <h3 class="card-title">بيانات الأخبارية</h3>
                         </div>
 
 
@@ -59,33 +59,34 @@ $abouts = select($conn, "about", "*");
                             <?php endif; ?>
 
 
+
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>الرقم</th>
+                                        <th>الأسم</th>
+                                        <th>الصور</th>
+                                        <th>التاريخ</th>
                                         <th>العنوان</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>التلفون</th>
-                                        <th>الفتح</th>
-                                        <th>الاغلاق</th>
+                                        <th>الوصف</th>
                                         <th>التحكم</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($abouts as $about) : ?>
+                                    <?php foreach ($news as $new) : ?>
                                         <tr>
-                                            <td><?= $about['id'] ?></td>
-                                            <td><?= $about['address'] ?></td>
-                                            <td><?= $about['email'] ?></td>
-                                            <td><?= $about['phone'] ?></td>
-                                            <td><?= $about['open'] ?></td>
-                                            <td><?= $about['close'] ?></td>
-                                            <td>
-                                                <a class="btn btn-success" href="<?= getpage("about/edit.php"); ?>?id=<?= $about['id'] ?>">تعديل</a>
+                                            <td><?= $new['id'] ?></td>
+                                            <td><?= $new['name'] ?></td>
 
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/about/delete.php"); ?>?id=<?= $about['id'] ?>">حذف</a>
+                                            <td><?= $new['image'] ?></td>
+                                            <td><?= $new['date'] ?></td>
+                                            <td><?= $new['title'] ?></td>
+                                            <td><?= $new['description'] ?></td>
+                                            <td>
+                                                <a class="btn btn-success" href="<?= getpage("news/edit.php"); ?>?id=<?= $new['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/news/delete.php"); ?>?id=<?= $new['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -94,11 +95,11 @@ $abouts = select($conn, "about", "*");
                                 <tfoot>
                                     <tr>
                                         <th>الرقم</th>
+                                        <th>الأسم</th>
+                                        <th>الصور</th>
+                                        <th>التاريخ</th>
                                         <th>العنوان</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>التلفون</th>
-                                        <th>الفتح</th>
-                                        <th>الاغلاق</th>
+                                        <th>الوصف</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>

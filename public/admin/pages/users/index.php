@@ -50,11 +50,11 @@ $users = select($conn, "users", "*");
 
                             <?php if (isset($_SESSION['successful']["db"])) :  ?>
 
-                                <div class='alert alert-success'>تم حذف بنجاح</div>
+                                <div class='alert alert-success'><?=$_SESSION['successful']['db'] ?></div>
 
                             <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
-                                <div class='alert alert-danger'>خطاء في الحذف</div>
+                                <div class='alert alert-danger'><?=$_SESSION['errors']['db'] ?></div>
 
                             <?php endif; ?>
 
@@ -77,8 +77,14 @@ $users = select($conn, "users", "*");
                                             <td><?= $user['id'] ?></td>
                                             <td><?= $user['name'] ?></td>
                                             <td><?= $user['email'] ?></td>
-                                            <td><?= $user['is_admin'] ?></td>
+                                            <?php  if($user['is_admin'] == 1): ?>
+                                                  <td class="text-primary">مشرف</td>
+                                            <?php  else : ?>
+                                                <td class="text-danger">ليس مشرف</td>
+                                            <?php  endif; ?>
+                                            
                                             <td>
+                                                
                                                 <a class="btn btn-success" href="<?= getpage("users/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
                                                 <a class="btn btn-danger" href="<?= getCntrollor("admin/users/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
                                             </td>

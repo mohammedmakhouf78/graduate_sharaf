@@ -12,30 +12,20 @@ if (isset($_POST['address'])) {
 
 
     $address = $_POST['address'];
-    // validateEmpty($address, "address", "error in address ", getpage("about/edit.php"));
+    validateEmpty($address, "address", "error in address ", getpage("about/edit.php"));
+
+    $phone = $_POST['phone'];
+    validateEmpty($phone, "phone", "error in phone ", getpage("about/edit.php"));
 
 
     $email = $_POST['email'];
     validateEmail($email, "email", "error in email ", getpage("about/index.php"));
 
-
-
-    $phone = $_POST['phone'];
-    validatePhon($phone, "phone", "error in phone ", getpage("about/index.php"));
-
-
-
-
-
     $open = $_POST['open'];
-    validateTime($open, "open", "error in open ", getpage("about/index.php"));
+    validateEmpty($open, "open", "error in open ", getpage("about/edit.php"));
 
     $close = $_POST['close'];
-    validateTime($close, "close", "error in close ", getpage("about/index.php"));
-
-
-
-
+    validateEmpty($close, "close", "error in close ", getpage("about/edit.php"));
 
 
     $data = array(
@@ -48,16 +38,10 @@ if (isset($_POST['address'])) {
     );
 
 
-
-
-
-
-
     $result =  updata($conn, "about", $data, $id);
 
-
     if ($result) {
-        addSuccessToSession("db", "about Updataed Successfully");
+        addSuccessToSession("db", "تم التعديل بنجاح");
     } else {
         addErrorsToSession("db", "there was an error sorry ");
     }

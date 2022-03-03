@@ -40,12 +40,13 @@ if (isset($_GET['id'])) {
                 <!-- jquery validation -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">تعديل المستخدم</h3>
+                        <h3 class="card-title">تعديل الأخبار</h3>
                     </div>
+                      <!-- ليس لها اي فائده -->
                     <div>
                         <?php if (isset($_SESSION['successful']["db"])) :  ?>
 
-                            <div class='alert alert-success'>تم التعديل  بنجاح</div>
+                            <div class='alert alert-success'>تم التعديل بنجاح</div>
 
                         <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
@@ -85,14 +86,14 @@ if (isset($_GET['id'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="open">الفتح</label>
-                                    <input type="text" name="open" class="form-control" id="open" value="<?= $OldData['open'] ?>">
+                                    <input type="time" id="open" class="form-control" value="<?= $OldData['open'] ?>" name="open">
                                     <?php if (isset($_SESSION['errors']['open'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['open'] ?></p>
                                     <?php endif ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="close">الاغلاق</label>
-                                    <input type="text" name="close" class="form-control" id="close" value="<?= $OldData['close'] ?>">
+                                    <input type="time" id="close" class="form-control"  value="<?= $OldData['close'] ?>" name="close">
                                     <?php if (isset($_SESSION['errors']['close'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['close'] ?></p>
                                     <?php endif ?>

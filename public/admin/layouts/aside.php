@@ -38,74 +38,75 @@
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-user"></i>
-           
             <p>
               المستخدم
               <i class="right fas fa-angle-left"></i>
-             
             </p>
           </a>
           <ul class="nav nav-treeview">
-
             <li class="nav-item">
               <a href="<?= getpage("users/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("users/create.php") ? 'active' : '' ?>">
                 <i class="far fa-edit nav-icon"></i>
-              
                 <p>إنشاء</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= getpage("users/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("users/index.php") ? 'active' : ''?>">
-             
-              <i class="fas fa-users nav-icon"></i>
-              
+              <a href="<?= getpage("users/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("users/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
                 <p>إظهار البيانات</p>
               </a>
             </li>
+          </ul>
+        </li>
 
 
-
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+            <i class="far fa-address-card nav-icon"></i>
+            <p>
+              حول المواقع
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("about/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("about/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                <p>إدخال بيانات</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("about/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("about/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار بيانات المواقع</p>
+              </a>
+            </li>
           </ul>
         </li>
 
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
-          
-            <i class="far fa-address-card nav-icon"></i>
-           
+            <i class="nav-icon fas fa-newspaper"></i>
             <p>
-              حول المواقع
+              الإخبارية
               <i class="right fas fa-angle-left"></i>
-             
             </p>
           </a>
           <ul class="nav nav-treeview">
-
             <li class="nav-item">
-              <a href="<?= getpage("about/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("about/create.php") ? 'active' : '' ?>">
-              <i class="far fa-edit nav-icon"></i>
-
-                
-              
+              <a href="<?= getpage("news/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("news/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
                 <p>إدخال بيانات</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= getpage("about/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("about/index.php") ? 'active' : ''?>">
-             
-              <i class="fas fa-users nav-icon"></i>
-              
-                <p>إظهار بيانات المواقع</p>
+              <a href="<?= getpage("news/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("news/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار البيانات الإخبارية</p>
               </a>
             </li>
-
-
-
           </ul>
         </li>
-
-        
-
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

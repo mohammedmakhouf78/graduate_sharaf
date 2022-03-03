@@ -5,7 +5,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $result = delete($conn, "about", $id);
     if ($result) {
-        addSuccessToSession("db", "about delete Successfully");
+        addSuccessToSession("db", "تم الحذف بنجاح");
     } else {
         addErrorsToSession("db", "there was an error sorry ");
     }

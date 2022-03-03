@@ -37,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">معلوامات عن المطعم</h3>
+            <h3 class="card-title">إنشاء إخبارية</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
@@ -56,41 +56,42 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
           <div class="card-body">
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="<?= getCntrollor("admin/about/create.php"); ?>" method="post">
+            <form id="quickForm" action="<?= getCntrollor("admin/news/create.php"); ?>" method="post">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="address">العنوان</label>
-                  <input type="text" name="address" class="form-control" id="address">
-                  <?php if (isset($_SESSION['errors']['address'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['address'] ?></p>
+                  <label for="name">الأسم</label>
+                  <input type="text" name="name" class="form-control" id="name">
+                  <?php if (isset($_SESSION['errors']['name'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
                   <?php endif ?>
                 </div>
                 <div class="form-group">
-                  <label for="phone">التلفون</label>
-                  <input type="text" name="phone" class="form-control" id="phone">
-                  <?php if (isset($_SESSION['errors']['phone'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['phone'] ?></p>
+                  <label for="image">الصور</label>
+                  <input type="file" name="image" class="form-control" id="image">
+                  <?php if (isset($_SESSION['errors']['image'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
                   <?php endif ?>
                 </div>
                 <div class="form-group">
-                  <label for="email">البريد الالكتروني</label>
-                  <input type="email" name="email" class="form-control" id="email">
-                  <?php if (isset($_SESSION['errors']['email'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
+                  <label for="date">التاريخ</label>
+                  <input type="date" name="date" class="form-control" id="date">
+                  <?php if (isset($_SESSION['errors']['date'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['date'] ?></p>
                   <?php endif ?>
                 </div>
                 <div class="form-group">
-                  <label for="open">الفتح</label>
-                  <input type="time" id="open" class="form-control" name="open">
-                  <?php if (isset($_SESSION['errors']['open'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['open'] ?></p>
+                  <label for="title"> العنوان</label>
+                  <input type="title" name="title" class="form-control" id="title">
+                  <?php if (isset($_SESSION['errors']['title'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['title'] ?></p>
                   <?php endif ?>
                 </div>
                 <div class="form-group">
-                  <label for="close">الاغلاق</label>
-                  <input type="time" id="close" class="form-control" name="close">
-                  <?php if (isset($_SESSION['errors']['close'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['close'] ?></p>
+                  <label for="description">الواصف</label>
+                  <br>
+                  <textarea name="description" id="description" cols="128" rows="10"></textarea>
+                  <?php if (isset($_SESSION['errors']['description'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['description'] ?></p>
                   <?php endif ?>
                 </div>
               </div>
@@ -105,19 +106,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
       </div>
       <!--/.col (left) -->
       <!-- right column -->
-
-
-
-
-
-
-
-
-
-
-
-
-
   </section>
   <!-- /.content -->
 </div>

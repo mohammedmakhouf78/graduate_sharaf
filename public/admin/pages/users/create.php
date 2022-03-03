@@ -81,8 +81,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
                 </div>
                 <div class="form-group mb-0">
                   <div class="custom-control custom-checkbox">
+                  <label class="custom-control-label" for="is_admin">هل أنت مشرف</label>
                     <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1">
-                    <label class="custom-control-label" for="is_admin">هل هو مشرف</label>
+                   
                   </div>
                 </div>
               </div>
@@ -97,18 +98,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
       </div>
       <!--/.col (left) -->
       <!-- right column -->
-
-
-
-
-
-
-
-
-
-
-
-
 
   </section>
   <!-- /.content -->

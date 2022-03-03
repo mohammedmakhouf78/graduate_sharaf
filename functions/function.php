@@ -19,35 +19,9 @@ function validateString($data, $name, $message, $path)
 }
 
 
-
-function validateTime($data, $name, $message, $path)
-{
-    $data = test_input($data);
-    if (!(preg_match("/^(?:1[012]|0[0-9]):[0-5][0-9]$/", $data) && !empty($data))) {
-        addErrorsToSession($name, $message);
-        header("location:$path");
-        exit;
-    }
-    return true;
-}
-
-
-function validatePhon($data, $name, $message, $path)
-{
-    $data = test_input($data);
-    if (!(preg_match("/^[0-9]{11}$/", $data) && !empty($data))) {
-        addErrorsToSession($name, $message);
-        header("location:$path");
-        exit;
-    }
-    return true;
-}
-
-
 function validateEmpty($data, $name, $message, $path)
 {
-   // $data = test_input($data);
-    if (!empty($data)) {
+    if (empty($data)) {
         addErrorsToSession($name, $message);
         header("location:$path");
         exit;
