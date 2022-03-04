@@ -38,11 +38,11 @@
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-user"></i>
-           
+
             <p>
               المستخدم
               <i class="right fas fa-angle-left"></i>
-             
+
             </p>
           </a>
           <ul class="nav nav-treeview">
@@ -50,15 +50,115 @@
             <li class="nav-item">
               <a href="<?= getpage("users/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("users/create.php") ? 'active' : '' ?>">
                 <i class="far fa-edit nav-icon"></i>
-              
+
                 <p>إنشاء</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= getpage("users/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("users/index.php") ? 'active' : ''?>">
-             
-              <i class="fas fa-users nav-icon"></i>
-              
+              <a href="<?= getpage("users/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("users/index.php") ? 'active' : '' ?>">
+
+                <i class="fas fa-users nav-icon"></i>
+
+                <p>إظهار البيانات</p>
+              </a>
+            </li>
+
+
+
+          </ul>
+        </li>
+
+
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-user"></i>
+
+            <p>
+              الرساله
+              <i class="right fas fa-angle-left"></i>
+
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="<?= getpage("message/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("message/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+
+                <p>إنشاء</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("message/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("message/index.php") ? 'active' : '' ?>">
+
+                <i class="fas fa-users nav-icon"></i>
+
+                <p>إظهار البيانات</p>
+              </a>
+            </li>
+
+
+
+          </ul>
+        </li>
+
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-user"></i>
+
+            <p>
+              الطباخ
+              <i class="right fas fa-angle-left"></i>
+
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="<?= getpage("chefs/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("chefs/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+
+                <p>إنشاء</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("chefs/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("chefs/index.php") ? 'active' : '' ?>">
+
+                <i class="fas fa-users nav-icon"></i>
+
+                <p>إظهار البيانات</p>
+              </a>
+            </li>
+
+
+
+          </ul>
+        </li>
+
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-user"></i>
+
+            <p>
+              sliders
+              <i class="right fas fa-angle-left"></i>
+
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="<?= getpage("sliders/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("sliders/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+
+                <p>إنشاء</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("sliders/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("sliders/index.php") ? 'active' : '' ?>">
+
+                <i class="fas fa-users nav-icon"></i>
+
                 <p>إظهار البيانات</p>
               </a>
             </li>

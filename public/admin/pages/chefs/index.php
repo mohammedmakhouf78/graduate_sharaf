@@ -5,7 +5,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$users = select($conn, "users", "*");
+$chefs = select($conn, "chefs", "*");
 
 
 ?>
@@ -18,6 +18,7 @@ $users = select($conn, "users", "*");
 
 <?php include layouts("navbar.php"); ?>
 <?php include layouts("aside.php"); ?>
+
 
 
 <div class="content-wrapper">
@@ -42,7 +43,7 @@ $users = select($conn, "users", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات المستخدمين</h3>
+                            <h3 class="card-title">الرسايل</h3>
                         </div>
 
 
@@ -64,36 +65,29 @@ $users = select($conn, "users", "*");
                                 <thead>
                                     <tr>
                                         <th>الرقم</th>
-                                        <th>الأسم</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>هل هو مشرف</th>
+                                        <th>الاسم</th>
+                                        <th> اسم الصوره</th>
+                                        <th>الوظيفه</th>
+                                        <th>facebook</th>
+                                        <th>twitter</th>
+                                        <th>linked_in</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($users as $user) : ?>
+                                    <?php foreach ($chefs as $user) : ?>
                                         <tr>
                                             <td><?= $user['id'] ?></td>
                                             <td><?= $user['name'] ?></td>
-                                            <td><?= $user['email'] ?></td>
-
-                                            <?php if ($user['is_admin'] == 1) : ?>
-
-
-                                                <td class="text-primary">
-                                                    مشرف
-                                                </td>
-
-                                            <?php else : ?>
-                                                <td class="text-danger">
-                                                    ليس مشرف
-                                                </td>
-
-                                            <?php endif ?>
+                                            <td><?= $user['image'] ?></td>
+                                            <td><?= $user['job'] ?></td>
+                                            <td><?= $user['facebook'] ?></td>
+                                            <td><?= $user['twitter'] ?></td>
+                                            <td><?= $user['linked_in'] ?></td>
                                             <td>
-                                                <a class="btn btn-success" href="<?= getpage("users/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/users/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
+                                                <a class="btn btn-success" href="<?= getpage("chefs/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/chefs/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -102,9 +96,12 @@ $users = select($conn, "users", "*");
                                 <tfoot>
                                     <tr>
                                         <th>الرقم</th>
-                                        <th>الأسم</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>هل هو مشرف</th>
+                                        <th>الاسم</th>
+                                        <th> اسم الصوره</th>
+                                        <th>الوظيفه</th>
+                                        <th>facebook</th>
+                                        <th>twitter</th>
+                                        <th>linked_in</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>
