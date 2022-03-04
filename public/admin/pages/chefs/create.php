@@ -17,6 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
 
+
 <div class="content-wrapper">
 
   <div class="content-header">
@@ -37,7 +38,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">إنشاء مستخدم</h3>
+            <h3 class="card-title">إنشاء رساله</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
@@ -56,53 +57,76 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
           <div class="card-body">
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="<?= getCntrollor("admin/users/create.php"); ?>" method="post">
+            <form id="quickForm" action="<?= getCntrollor("admin/chefs/create.php"); ?>" method="post">
               <div class="card-body">
+
+
                 <div class="form-group">
-                  <label for="name">الأسم</label>
+                  <label for="name"> الأسم </label>
                   <input type="text" name="name" class="form-control" id="name">
                   <?php if (isset($_SESSION['errors']['name'])) : ?>
                     <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
                   <?php endif ?>
                 </div>
+
                 <div class="form-group">
-                  <label for="email">البريد الإلكتروني</label>
-                  <input type="email" name="email" class="form-control" id="email">
-                  <?php if (isset($_SESSION['errors']['email'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
+                  <label for="lastname">الصوره</label>
+                  <input type="file" name="imges" class="form-control" id="imges">
+                  <?php if (isset($_SESSION['errors']['imges'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['imges'] ?></p>
+                  <?php endif ?>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="email">الوظيفه</label>
+                  <input type="text" name="job" class="form-control" id="job">
+                  <?php if (isset($_SESSION['errors']['job'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['job'] ?></p>
+                  <?php endif ?>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="facebook">facebook</label>
+                  <input type="text" name="facebook" class="form-control" id="facebook">
+                  <?php if (isset($_SESSION['errors']['facebook'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['facebook'] ?></p>
+                  <?php endif ?>
+                </div>
+
+                <div class="form-group">
+                  <label for="twitter">twitter</label>
+                  <input type="text" name="twitter" class="form-control" id="twitter">
+                  <?php if (isset($_SESSION['errors']['twitter'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['twitter'] ?></p>
                   <?php endif ?>
                 </div>
                 <div class="form-group">
-                  <label for="Password">كلمة المرور</label>
-                  <input type="password" name="password" class="form-control" id="Password">
-                  <?php if (isset($_SESSION['errors']['password'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['password'] ?></p>
+                  <label for="linked_in">linked_in</label>
+                  <input type="text" name="linked_in" class="form-control" id="linked_in">
+                  <?php if (isset($_SESSION['errors']['linked_in'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['linked_in'] ?></p>
                   <?php endif ?>
                 </div>
-                <div class="form-group mb-0">
-                  <div class="custom-control custom-checkbox">
-                  <label class="custom-control-label" for="is_admin">هل أنت مشرف</label>
-                    <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1">
-                    <label class="custom-control-label" for="is_admin">هل انت المشرف</label>
-                  </div>
-                </div>
+
+
+
               </div>
           </div>
-          <!-- /.card-body -->
+
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">إرسال</button>
           </div>
           </form>
         </div>
-        <!-- /.card -->
+
+
       </div>
-      <!--/.col (left) -->
-      <!-- right column -->
 
   </section>
-  <!-- /.content -->
+
 </div>
-<!-- /.content-wrapper -->
 
 
 <?php include layouts("footer.php"); ?>

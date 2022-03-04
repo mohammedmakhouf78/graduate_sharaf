@@ -5,7 +5,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$users = select($conn, "users", "*");
+$message = select($conn, "messages", "*");
 
 
 ?>
@@ -18,6 +18,7 @@ $users = select($conn, "users", "*");
 
 <?php include layouts("navbar.php"); ?>
 <?php include layouts("aside.php"); ?>
+
 
 
 <div class="content-wrapper">
@@ -42,7 +43,7 @@ $users = select($conn, "users", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات المستخدمين</h3>
+                            <h3 class="card-title">الرسايل</h3>
                         </div>
 
 
@@ -64,30 +65,27 @@ $users = select($conn, "users", "*");
                                 <thead>
                                     <tr>
                                         <th>الرقم</th>
-                                        <th>الأسم</th>
+                                        <th> الاسم الاول</th>
+                                        <th> الاسم الاخير</th>
                                         <th>البريد الإلكتروني</th>
-                                        <th>هل هو مشرف</th>
+                                        <th>رقم الموبايل</th>
+                                        <th>الرساله</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($users as $user) : ?>
+                                    <?php foreach ($message as $user) : ?>
                                         <tr>
                                             <td><?= $user['id'] ?></td>
-                                            <td><?= $user['name'] ?></td>
+                                            <td><?= $user['first_name'] ?></td>
+                                            <td><?= $user['last_name'] ?></td>
                                             <td><?= $user['email'] ?></td>
-
-                                            <?php  if($user['is_admin'] == 1): ?>
-                                                  <td class="text-primary">مشرف</td>
-                                            <?php  else : ?>
-                                                <td class="text-danger">ليس مشرف</td>
-                                            <?php  endif; ?>
-                                            
+                                            <td><?= $user['phone'] ?></td>
+                                            <td><?= $user['message'] ?></td>
                                             <td>
-                                                
-                                                <a class="btn btn-success" href="<?= getpage("users/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/users/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
+                                                <a class="btn btn-success" href="<?= getpage("message/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/message/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -96,9 +94,11 @@ $users = select($conn, "users", "*");
                                 <tfoot>
                                     <tr>
                                         <th>الرقم</th>
-                                        <th>الأسم</th>
+                                        <th> الاسم الاول</th>
+                                        <th> الاسم الاخير</th>
                                         <th>البريد الإلكتروني</th>
-                                        <th>هل هو مشرف</th>
+                                        <th>رقم الموبايل</th>
+                                        <th>الرساله</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>

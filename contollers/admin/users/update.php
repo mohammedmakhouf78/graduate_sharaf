@@ -34,7 +34,7 @@ if (isset($_POST['name'])) {
     if ($result) {
         addSuccessToSession("db", "تم التعديل بنجاح");
     } else {
-        addErrorsToSession("db", "there was an error sorry ");
+        addErrorsToSession("db", "خطأ في التعديل ");
     }
 
     redirect(getpage("users/index.php"));

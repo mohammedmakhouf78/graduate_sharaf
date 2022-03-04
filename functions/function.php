@@ -15,8 +15,33 @@ function validateString($data, $name, $message, $path)
         header("location:$path");
         exit;
     }
+
     return true;
 }
+
+function  validatelast($data, $name, $message, $path)
+{
+    $data = test_input($data);
+    if (!(preg_match('/^[A-Za-z]*$/', $data) && !empty($data))) {
+        addErrorsToSession($name, $message);
+        header("location:$path");
+        exit;
+    }
+    return true;
+}
+
+function validateMessage($data, $name, $message, $path)
+{
+    $data = test_input($data);
+    if (!(preg_match('/^[A-Za-z0-9]*$/', $data) && !empty($data))) {
+        addErrorsToSession($name, $message);
+        header("location:$path");
+        exit;
+    }
+    return true;
+}
+
+
 
 
 function validateEmpty($data, $name, $message, $path)
@@ -28,6 +53,7 @@ function validateEmpty($data, $name, $message, $path)
     }
     return true;
 }
+
 
 
 function validateEmail($data, $name, $message, $path)
@@ -47,6 +73,60 @@ function test_input($data)
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
+}
+
+
+
+function validatePhone($data, $name, $message, $path)
+{
+
+    $data = test_input($data);
+    if (!(preg_match('/^[0-9]{10}+$/', $data))) {
+
+        addErrorsToSession($name, $message);
+        header("location:$path");
+        exit;
+    }
+    return true;
+}
+
+function validateflot($data, $name, $message, $path)
+{
+
+    $data = test_input($data);
+    if (!(preg_match('/^[0-9,-.]+$/', $data))) {
+
+        addErrorsToSession($name, $message);
+        header("location:$path");
+        exit;
+    }
+    return true;
+}
+
+function imges($data, $name, $message, $path)
+{
+
+    $data = test_input($data);
+    if (empty($data)) {
+
+        addErrorsToSession($name, $message);
+        header("location:$path");
+        exit;
+    }
+    return true;
+}
+
+function lunk($data, $name, $message, $path)
+{
+
+    $data = test_input($data);
+    if (empty($data)) {
+
+        addErrorsToSession($name, $message);
+        header("location:$path");
+        exit;
+    }
+    return true;
 }
 
 function validatePassword($data, $name, $path)

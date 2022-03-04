@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
                                 <div class="form-group mb-0">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1" value="1" <?= $OldData['is_admin'] == 1 ? 'checked' : '' ?>>
-                                        <label class="custom-control-label" for="is_admin">هل هو مشرف</label>
+                                        <label class="custom-control-label" for="is_admin">هل انت المشرف</label>
                                     </div>
                                 </div>
                             </div>
