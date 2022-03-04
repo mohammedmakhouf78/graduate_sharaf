@@ -15,6 +15,7 @@ function validateString($data, $name, $message, $path)
         header("location:$path");
         exit;
     }
+
     return true;
 }
 
@@ -40,6 +41,21 @@ function validateMessage($data, $name, $message, $path)
     return true;
 }
 
+
+
+
+function validateEmpty($data, $name, $message, $path)
+{
+    if (empty($data)) {
+        addErrorsToSession($name, $message);
+        header("location:$path");
+        exit;
+    }
+    return true;
+}
+
+
+
 function validateEmail($data, $name, $message, $path)
 {
     $data = test_input($data);
@@ -58,6 +74,7 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+
 
 
 function validatePhone($data, $name, $message, $path)
@@ -153,7 +170,6 @@ function addErrorsToSession($key, $value)
 
     $_SESSION['errors'][$key] = $value;
 }
-
 
 function addSuccessToSession($key, $value)
 {

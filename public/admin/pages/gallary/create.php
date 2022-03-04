@@ -37,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">إنشاء مستخدم</h3>
+            <h3 class="card-title">إنشاء معرض</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
@@ -56,35 +56,21 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
           <div class="card-body">
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="<?= getCntrollor("admin/users/create.php"); ?>" method="post">
+            <form id="quickForm" action="<?= getCntrollor("admin/gallary/create.php"); ?>" method="post">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="name">الأسم</label>
-                  <input type="text" name="name" class="form-control" id="name">
-                  <?php if (isset($_SESSION['errors']['name'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
+                  <label for="title"> العنوان</label>
+                  <input type="title" name="title" class="form-control" id="title">
+                  <?php if (isset($_SESSION['errors']['title'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['title'] ?></p>
                   <?php endif ?>
                 </div>
                 <div class="form-group">
-                  <label for="email">البريد الإلكتروني</label>
-                  <input type="email" name="email" class="form-control" id="email">
-                  <?php if (isset($_SESSION['errors']['email'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
+                  <label for="image">الصور</label>
+                  <input type="file" name="image" class="form-control" id="image">
+                  <?php if (isset($_SESSION['errors']['image'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
                   <?php endif ?>
-                </div>
-                <div class="form-group">
-                  <label for="Password">كلمة المرور</label>
-                  <input type="password" name="password" class="form-control" id="Password">
-                  <?php if (isset($_SESSION['errors']['password'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['password'] ?></p>
-                  <?php endif ?>
-                </div>
-                <div class="form-group mb-0">
-                  <div class="custom-control custom-checkbox">
-                  <label class="custom-control-label" for="is_admin">هل أنت مشرف</label>
-                    <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1">
-                    <label class="custom-control-label" for="is_admin">هل انت المشرف</label>
-                  </div>
                 </div>
               </div>
           </div>

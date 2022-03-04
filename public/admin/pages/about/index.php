@@ -5,7 +5,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$users = select($conn, "users", "*");
+$abouts = select($conn, "about", "*");
 
 
 ?>
@@ -42,7 +42,7 @@ $users = select($conn, "users", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات المستخدمين</h3>
+                            <h3 class="card-title">بيانات الموقع</h3>
                         </div>
 
 
@@ -54,40 +54,38 @@ $users = select($conn, "users", "*");
 
                             <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
-                                <div class='alert alert-danger'><?= $_SESSION['error']['db'] ?></div>
+                                <div class='alert alert-danger'><?= $_SESSION['errors']['db'] ?></div>
 
                             <?php endif; ?>
-
 
 
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>الرقم</th>
-                                        <th>الأسم</th>
+                                        <th>العنوان</th>
                                         <th>البريد الإلكتروني</th>
-                                        <th>هل هو مشرف</th>
+                                        <th>التلفون</th>
+                                        <th>الفتح</th>
+                                        <th>الاغلاق</th>
                                         <th>التحكم</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($users as $user) : ?>
+                                    <?php foreach ($abouts as $about) : ?>
                                         <tr>
-                                            <td><?= $user['id'] ?></td>
-                                            <td><?= $user['name'] ?></td>
-                                            <td><?= $user['email'] ?></td>
-
-                                            <?php  if($user['is_admin'] == 1): ?>
-                                                  <td class="text-primary">مشرف</td>
-                                            <?php  else : ?>
-                                                <td class="text-danger">ليس مشرف</td>
-                                            <?php  endif; ?>
-                                            
+                                            <td><?= $about['id'] ?></td>
+                                            <td><?= $about['address'] ?></td>
+                                            <td><?= $about['email'] ?></td>
+                                            <td><?= $about['phone'] ?></td>
+                                            <td><?= $about['open'] ?></td>
+                                            <td><?= $about['close'] ?></td>
                                             <td>
-                                                
-                                                <a class="btn btn-success" href="<?= getpage("users/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/users/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
+                                                <a class="btn btn-success" href="<?= getpage("about/edit.php"); ?>?id=<?= $about['id'] ?>">تعديل</a>
+
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/about/delete.php"); ?>?id=<?= $about['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -96,9 +94,11 @@ $users = select($conn, "users", "*");
                                 <tfoot>
                                     <tr>
                                         <th>الرقم</th>
-                                        <th>الأسم</th>
+                                        <th>العنوان</th>
                                         <th>البريد الإلكتروني</th>
-                                        <th>هل هو مشرف</th>
+                                        <th>التلفون</th>
+                                        <th>الفتح</th>
+                                        <th>الاغلاق</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>

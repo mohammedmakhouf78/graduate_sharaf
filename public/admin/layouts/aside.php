@@ -43,10 +43,10 @@
               المستخدم
               <i class="right fas fa-angle-left"></i>
 
+
             </p>
           </a>
           <ul class="nav nav-treeview">
-
             <li class="nav-item">
               <a href="<?= getpage("users/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("users/create.php") ? 'active' : '' ?>">
                 <i class="far fa-edit nav-icon"></i>
@@ -56,6 +56,7 @@
             </li>
             <li class="nav-item">
               <a href="<?= getpage("users/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("users/index.php") ? 'active' : '' ?>">
+
 
                 <i class="fas fa-users nav-icon"></i>
 
@@ -162,12 +163,83 @@
                 <p>إظهار البيانات</p>
               </a>
             </li>
-
-
-
           </ul>
         </li>
 
+
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+            <i class="far fa-address-card nav-icon"></i>
+            <p>
+              حول المواقع
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("about/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("about/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                <p>إدخال بيانات</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("about/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("about/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار بيانات المواقع</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-image"></i>
+            
+            <p>
+              الإخبارية
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("news/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("news/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                
+                <p>إدخال بيانات</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("news/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("news/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار البيانات الإخبارية</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+            <i class="far fa-address-card nav-icon"></i>
+            <p>
+               معرض الصور
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("gallary/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("gallary/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                <p>إدخال الصور</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("gallary/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("gallary/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار صور المواقع</p>
+              </a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

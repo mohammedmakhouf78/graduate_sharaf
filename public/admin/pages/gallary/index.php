@@ -5,7 +5,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$users = select($conn, "users", "*");
+$gallarys = select($conn, "gallary", "*");
 
 
 ?>
@@ -42,7 +42,7 @@ $users = select($conn, "users", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات المستخدمين</h3>
+                            <h3 class="card-title">بيانات المعرض</h3>
                         </div>
 
 
@@ -54,7 +54,7 @@ $users = select($conn, "users", "*");
 
                             <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
-                                <div class='alert alert-danger'><?= $_SESSION['error']['db'] ?></div>
+                                <div class='alert alert-danger'><?= $_SESSION['errors']['db'] ?></div>
 
                             <?php endif; ?>
 
@@ -64,30 +64,22 @@ $users = select($conn, "users", "*");
                                 <thead>
                                     <tr>
                                         <th>الرقم</th>
-                                        <th>الأسم</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>هل هو مشرف</th>
+                                        <th>الصور</th>
+                                        <th>العنوان</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($users as $user) : ?>
+                                    <?php foreach ($gallarys as $gallary) : ?>
                                         <tr>
-                                            <td><?= $user['id'] ?></td>
-                                            <td><?= $user['name'] ?></td>
-                                            <td><?= $user['email'] ?></td>
-
-                                            <?php  if($user['is_admin'] == 1): ?>
-                                                  <td class="text-primary">مشرف</td>
-                                            <?php  else : ?>
-                                                <td class="text-danger">ليس مشرف</td>
-                                            <?php  endif; ?>
-                                            
+                                            <td><?= $gallary['id'] ?></td>
+                                            <td><?= $gallary['image'] ?></td>
+                                            <td><?= $gallary['title'] ?></td>
                                             <td>
-                                                
-                                                <a class="btn btn-success" href="<?= getpage("users/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/users/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
+
+                                                <a class="btn btn-success" href="<?= getpage("gallary/edit.php"); ?>?id=<?= $gallary['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/gallary/delete.php"); ?>?id=<?= $gallary['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -96,9 +88,8 @@ $users = select($conn, "users", "*");
                                 <tfoot>
                                     <tr>
                                         <th>الرقم</th>
-                                        <th>الأسم</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>هل هو مشرف</th>
+                                        <th>الصور</th>
+                                        <th>العنوان</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>
