@@ -35,7 +35,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("users") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-user"></i>
 
@@ -70,7 +70,7 @@
         </li>
 
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("message") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-comment"></i>
             <p>
@@ -102,7 +102,7 @@
           </ul>
         </li>
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("chefs") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon far fa-hat-chef"></i>
             
@@ -135,7 +135,7 @@
           </ul>
         </li>
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("sliders") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-sliders-h"></i>
 
@@ -166,7 +166,7 @@
         </li>
 
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("about") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="far fa-address-card nav-icon"></i>
             <p>
@@ -190,7 +190,7 @@
           </ul>
         </li>
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("news") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-image"></i>
 
@@ -216,7 +216,7 @@
           </ul>
         </li>
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("gallary") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             
             <i class="fas fa-camera nav-icon"></i>
