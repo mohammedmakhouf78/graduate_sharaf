@@ -70,7 +70,7 @@ if (isset($_GET['id'])) {
 
 
                                     <div class="form-group">
-                                        <label for="lastname">الصوره</label>
+                                        <label>الصوره</label>
                                         <input type="file" name="imges" class="form-control" id="imges" value="<?= $OldData['image'] ?>">
                                         <?php if (isset($_SESSION['errors']['image'])) : ?>
                                             <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
@@ -96,7 +96,7 @@ if (isset($_GET['id'])) {
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="Password">خصم</label>
+                                        <label>خصم</label>
                                         <input type="text" name="discount" class="form-control" id="discount" value="<?= $OldData['discount'] ?>">
                                         <?php if (isset($_SESSION['errors']['discount'])) : ?>
                                             <p class="text-danger"><?= $_SESSION['errors']['discount'] ?></p>

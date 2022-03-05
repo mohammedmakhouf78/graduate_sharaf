@@ -35,7 +35,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("users") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-user"></i>
 
@@ -70,7 +70,7 @@
         </li>
 
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("message") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-user"></i>
 
@@ -103,7 +103,7 @@
           </ul>
         </li>
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("chefs") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-user"></i>
 
@@ -136,7 +136,7 @@
           </ul>
         </li>
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("sliders") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-user"></i>
 
@@ -167,7 +167,7 @@
         </li>
 
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("about") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="far fa-address-card nav-icon"></i>
             <p>
@@ -191,10 +191,10 @@
           </ul>
         </li>
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("news") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-image"></i>
-            
+
             <p>
               الإخبارية
               <i class="right fas fa-angle-left"></i>
@@ -204,7 +204,7 @@
             <li class="nav-item">
               <a href="<?= getpage("news/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("news/create.php") ? 'active' : '' ?>">
                 <i class="far fa-edit nav-icon"></i>
-                
+
                 <p>إدخال بيانات</p>
               </a>
             </li>
@@ -217,11 +217,11 @@
           </ul>
         </li>
 
-        <li class="nav-item menu-open">
+        <li class="nav-item <?= getUrl() ==  getpage("gallary") ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="far fa-address-card nav-icon"></i>
             <p>
-               معرض الصور
+              معرض الصور
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>

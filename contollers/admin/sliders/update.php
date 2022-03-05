@@ -3,37 +3,37 @@
 include __DIR__ . "/../../../functions/function.php";
 
 
-if (isset($_POST['image'])) {
+if (isset($_POST['imges'])) {
 
     $id = $_POST['id'];
 
-    $image = $_POST['image'];
-    imges($name, "name", "error in name ", getpage("sliders/create.php"));
+    $image = $_POST['imges'];
+    imges($image, "imges", "error in imegs ", getpage("sliders/index.php"));
 
-    $titel = $_POST['titel'];
-    validateMessage($titel, "titel", "error in titel ", getpage("sliders/create.php"));
+    $title = $_POST['title'];
+    validateMessage($title, "title", "error in title ", getpage("sliders/index.php"));
 
 
     $description = $_POST['description'];
-    validatePhone($phone, "description", "error in description ", getpage("sliders/create.php"));
+    validateMessage($description, "description", "error in description ", getpage("sliders/index.php"));
 
     $discount = $_POST['discount'];
-    validateMessage($discount, "discount", "error in discount ", getpage("sliders/create.php"));
+    validateflot($discount, "discount", "error in discount ", getpage("sliders/index.php"));
 
 
     $data = array(
         "image" => $image,
-        "titel" => $titel,
+        "title" => $title,
         "description" => $description,
         "discount" => $discount,
 
     );
 
-    $result = insert($conn, "sliders", $data);
 
 
 
     $result =  updata($conn, "sliders", $data, $id);
+
 
 
     if ($result) {
@@ -41,6 +41,7 @@ if (isset($_POST['image'])) {
     } else {
         addErrorsToSession("db", "خطأ في التعديل ");
     }
+
 
     redirect(getpage("sliders/index.php"));
 } else {

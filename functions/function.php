@@ -22,7 +22,7 @@ function validateString($data, $name, $message, $path)
 function  validatelast($data, $name, $message, $path)
 {
     $data = test_input($data);
-    if (!(preg_match('/^[A-Za-z]*$/', $data) && !empty($data))) {
+    if (!(preg_match('/^[A-Za-z ]*$/', $data) && !empty($data))) {
         addErrorsToSession($name, $message);
         header("location:$path");
         exit;
