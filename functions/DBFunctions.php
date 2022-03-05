@@ -34,7 +34,7 @@ function updata($conn, $table, $data, $id)
 
 function select($conn, $table, $columns)
 {
-  $query = "SELECT $columns FROM $table ";
+  $query = "SELECT $columns FROM $table";
   $result = mysqli_query($conn, $query);
   return  mysqli_fetch_all($result, MYSQLI_ASSOC);
 }

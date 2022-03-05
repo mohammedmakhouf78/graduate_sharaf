@@ -35,16 +35,16 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item <?= getUrl() ==  getpage("users") ? 'menu-open' : '' ?>">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-user"></i>
+        <li class="nav-item <?= getUrl() == getpage("users/index.php") ? 'menu-open' : '' ?><?= getUrl() == getpage("users/create.php")  ? 'menu-open' : '' ?>"">
+          <a href=" #" class="nav-link active">
+          <i class="nav-icon fas fa-user"></i>
 
-            <p>
-              المستخدم
-              <i class="right fas fa-angle-left"></i>
+          <p>
+            المستخدم
+            <i class="right fas fa-angle-left"></i>
 
 
-            </p>
+          </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -70,15 +70,15 @@
         </li>
 
 
-        <li class="nav-item <?= getUrl() ==  getpage("message") ? 'menu-open' : '' ?>">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-user"></i>
+        <li class="nav-item <?= getUrl() == getpage("message/index.php") ? 'menu-open' : '' ?><?= getUrl() == getpage("message/create.php")  ? 'menu-open' : '' ?>"">
+          <a href=" #" class="nav-link active">
+          <i class="nav-icon fas fa-user"></i>
 
-            <p>
-              الرساله
-              <i class="right fas fa-angle-left"></i>
+          <p>
+            الرساله
+            <i class="right fas fa-angle-left"></i>
 
-            </p>
+          </p>
           </a>
           <ul class="nav nav-treeview">
 
@@ -103,15 +103,15 @@
           </ul>
         </li>
 
-        <li class="nav-item <?= getUrl() ==  getpage("chefs") ? 'menu-open' : '' ?>">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-user"></i>
+        <li class="nav-item <?= getUrl() == getpage("chefs/index.php") ? 'menu-open' : '' ?><?= getUrl() == getpage("chefs/create.php")  ? 'menu-open' : '' ?>"">
+          <a href=" #" class="nav-link active">
+          <i class="nav-icon fas fa-user"></i>
 
-            <p>
-              الطباخ
-              <i class="right fas fa-angle-left"></i>
+          <p>
+            الطباخ
+            <i class="right fas fa-angle-left"></i>
 
-            </p>
+          </p>
           </a>
           <ul class="nav nav-treeview">
 
@@ -136,7 +136,7 @@
           </ul>
         </li>
 
-        <li class="nav-item <?= getUrl() ==  getpage("sliders") ? 'menu-open' : '' ?>">
+        <li class="nav-item <?= getUrl() == getpage("sliders/index.php") ? 'menu-open' : '' ?><?= getUrl() == getpage("sliders/create.php")  ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-user"></i>
 
@@ -167,13 +167,13 @@
         </li>
 
 
-        <li class="nav-item <?= getUrl() ==  getpage("about") ? 'menu-open' : '' ?>">
-          <a href="#" class="nav-link active">
-            <i class="far fa-address-card nav-icon"></i>
-            <p>
-              حول المواقع
-              <i class="right fas fa-angle-left"></i>
-            </p>
+        <li class="nav-item <?= getUrl() == getpage("about/index.php") ? 'menu-open' : '' ?><?= getUrl() == getpage("about/create.php")  ? 'menu-open' : '' ?>"">
+          <a href=" #" class="nav-link active">
+          <i class="far fa-address-card nav-icon"></i>
+          <p>
+            حول المواقع
+            <i class="right fas fa-angle-left"></i>
+          </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -191,14 +191,14 @@
           </ul>
         </li>
 
-        <li class="nav-item <?= getUrl() ==  getpage("news") ? 'menu-open' : '' ?>">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-image"></i>
+        <li class="nav-item <?= getUrl() == getpage("news/index.php") ? 'menu-open' : '' ?><?= getUrl() == getpage("news/create.php")  ? 'menu-open' : '' ?>"">
+          <a href=" #" class="nav-link active">
+          <i class="nav-icon fas fa-image"></i>
 
-            <p>
-              الإخبارية
-              <i class="right fas fa-angle-left"></i>
-            </p>
+          <p>
+            الإخبارية
+            <i class="right fas fa-angle-left"></i>
+          </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -217,13 +217,13 @@
           </ul>
         </li>
 
-        <li class="nav-item <?= getUrl() ==  getpage("gallary") ? 'menu-open' : '' ?>">
-          <a href="#" class="nav-link active">
-            <i class="far fa-address-card nav-icon"></i>
-            <p>
-              معرض الصور
-              <i class="right fas fa-angle-left"></i>
-            </p>
+        <li class="nav-item <?= getUrl() == getpage("gallary/index.php")  ? 'menu-open' : '' ?><?= getUrl() == getpage("gallary/create.php")  ? 'menu-open' : '' ?>"">
+          <a href=" #" class="nav-link active">
+          <i class="far fa-address-card nav-icon"></i>
+          <p>
+            معرض الصور
+            <i class="right fas fa-angle-left"></i>
+          </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
