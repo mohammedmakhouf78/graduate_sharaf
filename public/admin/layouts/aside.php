@@ -72,8 +72,7 @@
 
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-user"></i>
-
+            <i class="nav-icon fas fa-comment"></i>
             <p>
               الرساله
               <i class="right fas fa-angle-left"></i>
@@ -86,7 +85,7 @@
               <a href="<?= getpage("message/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("message/create.php") ? 'active' : '' ?>">
                 <i class="far fa-edit nav-icon"></i>
 
-                <p>إنشاء</p>
+                <p>إنشاء الرسالة</p>
               </a>
             </li>
             <li class="nav-item">
@@ -94,7 +93,7 @@
 
                 <i class="fas fa-users nav-icon"></i>
 
-                <p>إظهار البيانات</p>
+                <p> إظهار البيانات الرسالة</p>
               </a>
             </li>
 
@@ -105,8 +104,8 @@
 
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-user"></i>
-
+            <i class="nav-icon far fa-hat-chef"></i>
+            
             <p>
               الطباخ
               <i class="right fas fa-angle-left"></i>
@@ -127,7 +126,7 @@
 
                 <i class="fas fa-users nav-icon"></i>
 
-                <p>إظهار البيانات</p>
+                <p> إظهار البيانات الطباخين</p>
               </a>
             </li>
 
@@ -138,10 +137,10 @@
 
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-user"></i>
+            <i class="nav-icon fas fa-sliders-h"></i>
 
             <p>
-              sliders
+              المنزلق
               <i class="right fas fa-angle-left"></i>
 
             </p>
@@ -194,7 +193,7 @@
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-image"></i>
-            
+
             <p>
               الإخبارية
               <i class="right fas fa-angle-left"></i>
@@ -204,7 +203,7 @@
             <li class="nav-item">
               <a href="<?= getpage("news/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("news/create.php") ? 'active' : '' ?>">
                 <i class="far fa-edit nav-icon"></i>
-                
+
                 <p>إدخال بيانات</p>
               </a>
             </li>
@@ -219,9 +218,10 @@
 
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
-            <i class="far fa-address-card nav-icon"></i>
+            
+            <i class="fas fa-camera nav-icon"></i>
             <p>
-               معرض الصور
+              معرض الصور
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>

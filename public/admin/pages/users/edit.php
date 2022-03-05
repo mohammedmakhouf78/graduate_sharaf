@@ -77,13 +77,6 @@ if (isset($_GET['id'])) {
                                         <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
                                     <?php endif ?>
                                 </div>
-                                <div class="form-group">
-                                    <label for="Password">كلمة المرور</label>
-                                    <input type="password" name="password" class="form-control" id="Password" value="<?= $OldData['password'] ?>">
-                                    <?php if (isset($_SESSION['errors']['password'])) : ?>
-                                        <p class="text-danger"><?= $_SESSION['errors']['password'] ?></p>
-                                    <?php endif ?>
-                                </div>
 
                                 <div class="form-group mb-0">
                                     <div class="custom-control custom-checkbox">
