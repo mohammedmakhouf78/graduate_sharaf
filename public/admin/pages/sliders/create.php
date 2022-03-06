@@ -38,7 +38,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">إنشاء رساله</h3>
+            <h3 class="card-title">إضافة انزلاق</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
@@ -72,18 +72,17 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
                 </div>
 
                 <div class="form-group">
-                  <label for="title"> لقب </label>
+                  <label for="title">العنوان</label>
                   <input type="text" name="title" class="form-control" id="title">
                   <?php if (isset($_SESSION['errors']['title'])) : ?>
                     <p class="text-danger"><?= $_SESSION['errors']['title'] ?></p>
                   <?php endif ?>
                 </div>
 
-
-
                 <div class="form-group">
-                  <label for="description">وصف</label>
-                  <input type="description" name="description" class="form-control" id="description">
+                  <label for="description">الواصف</label>
+                  <br>
+                  <textarea name="description" id="description" cols="128" rows="10"></textarea>
                   <?php if (isset($_SESSION['errors']['description'])) : ?>
                     <p class="text-danger"><?= $_SESSION['errors']['description'] ?></p>
                   <?php endif ?>

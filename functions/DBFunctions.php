@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost", "mohammed", "", "sharaf_project", 3309);
+$conn = mysqli_connect("localhost", "root", "", "sharaf_project");
 
 function insert($conn, $table, $data)
 {
@@ -38,6 +38,14 @@ function select($conn, $table, $columns)
   $result = mysqli_query($conn, $query);
   return  mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
+
+function selectDesc($conn, $table, $columns)
+{
+  $query = "SELECT $columns FROM $table order by `id` desc";
+  $result = mysqli_query($conn, $query);
+  return  mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
 
 function selectWhere($conn, $table, $columns, $where)
 {

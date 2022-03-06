@@ -18,7 +18,7 @@ if (isset($_POST['name'])) {
     validatePhone($phone, "phone", "error in phone ", getpage("message/create.php"));
 
     $message = $_POST['message'];
-    validateMessage($message, "message", "error in message ", getpage("message/create.php"));
+    validateEmpty($message, "message", "error in message ", getpage("message/create.php"));
 
 
     $data = array(

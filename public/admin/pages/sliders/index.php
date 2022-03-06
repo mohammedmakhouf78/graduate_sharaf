@@ -43,7 +43,7 @@ $sliders = select($conn, "sliders", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">الرسايل</h3>
+                            <h3 class="card-title">بيانات المنزلق</h3>
                         </div>
 
 

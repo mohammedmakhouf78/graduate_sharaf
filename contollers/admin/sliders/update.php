@@ -15,7 +15,7 @@ if (isset($_POST['imges'])) {
 
 
     $description = $_POST['description'];
-    validateMessage($description, "description", "error in description ", getpage("sliders/index.php"));
+    validateEmpty($description, "description", "error in description ", getpage("sliders/index.php"));
 
     $discount = $_POST['discount'];
     validateflot($discount, "discount", "error in discount ", getpage("sliders/index.php"));

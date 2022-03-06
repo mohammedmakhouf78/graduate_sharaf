@@ -86,10 +86,10 @@ if (isset($_GET['id'])) {
                                     </div>
 
 
-
                                     <div class="form-group">
-                                        <label for="Password">وصف</label>
-                                        <input type="description" name="description" class="form-control" id="description" value="<?= $OldData['description'] ?>">
+                                        <label for="description">الواصف</label>
+                                        <br>
+                                        <textarea name="description" id="description" cols="128" rows="10" ><?= $OldData['description'] ?></textarea>
                                         <?php if (isset($_SESSION['errors']['description'])) : ?>
                                             <p class="text-danger"><?= $_SESSION['errors']['description'] ?></p>
                                         <?php endif ?>

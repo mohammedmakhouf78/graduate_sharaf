@@ -5,7 +5,11 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$users = select($conn, "users", "*");
+//$users = select($conn, "users", "*");
+$users = selectDesc($conn, "users", "*");
+
+
+
 
 
 ?>
@@ -63,6 +67,7 @@ $users = select($conn, "users", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الأسم</th>
                                         <th>البريد الإلكتروني</th>
@@ -72,20 +77,22 @@ $users = select($conn, "users", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($users as $user) : ?>
+                                    <?php foreach ($users as $key => $user) : ?>
                                         <tr>
+                                            <td><?=  ++$key ?></td>
                                             <td><?= $user['id'] ?></td>
                                             <td><?= $user['name'] ?></td>
+
                                             <td><?= $user['email'] ?></td>
 
-                                            <?php  if($user['is_admin'] == 1): ?>
-                                                  <td class="text-primary">مشرف</td>
-                                            <?php  else : ?>
+                                            <?php if ($user['is_admin'] == 1) : ?>
+                                                <td class="text-primary">مشرف</td>
+                                            <?php else : ?>
                                                 <td class="text-danger">ليس مشرف</td>
-                                            <?php  endif; ?>
-                                            
+                                            <?php endif; ?>
+
                                             <td>
-                                                
+
                                                 <a class="btn btn-success" href="<?= getpage("users/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
                                                 <a class="btn btn-danger" href="<?= getCntrollor("admin/users/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
                                             </td>
@@ -95,6 +102,7 @@ $users = select($conn, "users", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الأسم</th>
                                         <th>البريد الإلكتروني</th>

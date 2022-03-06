@@ -13,9 +13,6 @@ if (isset($_POST['name'])) {
     $email = $_POST['email'];
     validateEmail($email, "email", "error in email ", getpage("users/index.php"));
 
-    $password = $_POST['password'];
-    validatePassword($password, "password", getpage("users/index.php"));
-
 
     $is_admin = $_POST['is_admin'] ?? 0;
 
@@ -23,7 +20,6 @@ if (isset($_POST['name'])) {
     $data = array(
         "name" => $name,
         "email" => $email,
-        "password" => password_hash($password, PASSWORD_DEFAULT),
         "is_admin" => $is_admin,
     );
 
