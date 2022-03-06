@@ -88,7 +88,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
                 <div class="form-group">
-                  <label for="Password">رقم الموبايل</label>
+                  <label for="phone">التلفون</label>
                   <input type="phone" name="phone" class="form-control" id="phone">
                   <?php if (isset($_SESSION['errors']['phone'])) : ?>
                     <p class="text-danger"><?= $_SESSION['errors']['phone'] ?></p>
@@ -96,12 +96,17 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
                 </div>
 
                 <div class="form-group">
-                  <label for="Password">رساله</label>
-                  <input type="text" name="message" class="form-control" id="message">
+                  <label for="message">الرسالة</label>
+                  <br>
+                  <textarea name="message" id="message" cols="128" rows="10"></textarea>
                   <?php if (isset($_SESSION['errors']['message'])) : ?>
                     <p class="text-danger"><?= $_SESSION['errors']['message'] ?></p>
                   <?php endif ?>
                 </div>
+
+
+
+
 
 
 

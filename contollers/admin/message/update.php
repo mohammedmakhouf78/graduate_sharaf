@@ -20,7 +20,7 @@ if (isset($_POST['name'])) {
     validatePhone($phone, "phone", "error in phone ", getpage("message/index.php"));
 
     $message = $_POST['message'];
-    validateMessage($message, "message", "error in message ", getpage("message/index.php"));
+    validateEmpty($message, "message", "error in message ", getpage("message/index.php"));
 
 
     $is_admin = $_POST['is_admin'] ?? 0;

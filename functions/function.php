@@ -33,7 +33,7 @@ function  validatelast($data, $name, $message, $path)
 function validateMessage($data, $name, $message, $path)
 {
     $data = test_input($data);
-    if (!(preg_match('/^[A-Za-z0-9]*$/', $data) && !empty($data))) {
+    if (!(preg_match('/^[A-Za-z]*$/', $data) && !empty($data))) {
         addErrorsToSession($name, $message);
         header("location:$path");
         exit;
@@ -101,6 +101,22 @@ function validateflot($data, $name, $message, $path)
         exit;
     }
     return true;
+}
+
+function validateImage($name, $message, $path)
+{
+
+
+    $type = $_FILES[$name]["type"];
+    $Ext = explode("/", $type)[1];
+
+    if ($Ext == "jpeg" || $Ext == "jpg" || $Ext == "pag") {
+        return true;
+    } else {
+        addErrorsToSession($name, $message);
+        header("location:$path");
+        exit;
+    }
 }
 
 function imges($data, $name, $message, $path)
