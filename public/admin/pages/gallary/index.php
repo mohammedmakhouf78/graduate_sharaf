@@ -5,7 +5,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$gallarys = select($conn, "gallary", "*");
+//$gallarys = select($conn, "gallary", "*");
+$gallarys = selectDesc($conn, "gallary", "*");
 
 
 ?>
@@ -63,6 +64,7 @@ $gallarys = select($conn, "gallary", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الصور</th>
                                         <th>العنوان</th>
@@ -71,8 +73,9 @@ $gallarys = select($conn, "gallary", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($gallarys as $gallary) : ?>
+                                    <?php foreach ($gallarys as $key => $gallary) : ?>
                                         <tr>
+                                            <td><?= ++$key ?></td>
                                             <td><?= $gallary['id'] ?></td>
                                             <td><?= $gallary['image'] ?></td>
                                             <td><?= $gallary['title'] ?></td>
@@ -87,6 +90,7 @@ $gallarys = select($conn, "gallary", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الصور</th>
                                         <th>العنوان</th>

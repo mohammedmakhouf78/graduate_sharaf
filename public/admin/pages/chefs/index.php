@@ -5,7 +5,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$chefs = select($conn, "chefs", "*");
+//$chefs = select($conn, "chefs", "*");
+$chefs = selectDesc($conn, "chefs", "*");
 
 
 ?>
@@ -64,6 +65,7 @@ $chefs = select($conn, "chefs", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الاسم</th>
                                         <th> اسم الصوره</th>
@@ -76,8 +78,9 @@ $chefs = select($conn, "chefs", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($chefs as $user) : ?>
+                                    <?php foreach ($chefs as  $key => $user) : ?>
                                         <tr>
+                                            <td><?= ++$key ?></td>
                                             <td><?= $user['id'] ?></td>
                                             <td><?= $user['name'] ?></td>
                                             <td><?= $user['image'] ?></td>
@@ -95,6 +98,7 @@ $chefs = select($conn, "chefs", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الاسم</th>
                                         <th> اسم الصوره</th>

@@ -62,6 +62,7 @@ if (isset($_GET['id'])) {
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form id="quickForm" action="<?= getCntrollor("admin/news/update.php"); ?>" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?= $OldData['id'] ?>">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">الأسم</label>

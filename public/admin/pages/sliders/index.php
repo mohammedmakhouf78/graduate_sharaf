@@ -5,7 +5,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$sliders = select($conn, "sliders", "*");
+//$sliders = select($conn, "sliders", "*");
+$sliders = selectDesc($conn, "sliders", "*");
 
 
 ?>
@@ -64,6 +65,7 @@ $sliders = select($conn, "sliders", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th> الصوره</th>
                                         <th> القب</th>
@@ -74,8 +76,9 @@ $sliders = select($conn, "sliders", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($sliders as $user) : ?>
+                                    <?php foreach ($sliders as $key => $user) : ?>
                                         <tr>
+                                            <td><?= ++$key ?></td>
                                             <td><?= $user['id'] ?></td>
                                             <td><?= $user['image'] ?></td>
                                             <td><?= $user['title'] ?></td>
@@ -92,6 +95,7 @@ $sliders = select($conn, "sliders", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th> الصوره</th>
                                         <th> القب</th>

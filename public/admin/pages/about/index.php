@@ -4,8 +4,8 @@
 
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
-
-$abouts = select($conn, "about", "*");
+//$abouts = select($conn, "about", "*");
+$abouts = selectDesc($conn, "about", "*");
 
 
 ?>
@@ -62,6 +62,7 @@ $abouts = select($conn, "about", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>العنوان</th>
                                         <th>البريد الإلكتروني</th>
@@ -74,8 +75,9 @@ $abouts = select($conn, "about", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($abouts as $about) : ?>
+                                    <?php foreach ($abouts as $key => $about) : ?>
                                         <tr>
+                                            <td><?= ++$key ?></td>
                                             <td><?= $about['id'] ?></td>
                                             <td><?= $about['address'] ?></td>
                                             <td><?= $about['email'] ?></td>
@@ -93,6 +95,7 @@ $abouts = select($conn, "about", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>العنوان</th>
                                         <th>البريد الإلكتروني</th>
