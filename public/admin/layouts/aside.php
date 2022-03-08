@@ -39,6 +39,7 @@
 
 
 
+
         <li class="nav-item <?= (getUrl() ==  getpage("users/index.php") || getUrl() ==  getpage("users/create.php")) ? 'menu-open' : '' ?>">
 
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("users/index.php") || getUrl() ==  getpage("users/create.php")) ? 'active' : '' ?>">
@@ -48,7 +49,8 @@
               <i class="right fas fa-angle-left"></i>
 
 
-            </p>
+
+          </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -72,6 +74,7 @@
 
 
 
+
         <li class="nav-item  <?= (getUrl() ==  getpage("message/index.php") || getUrl() ==  getpage("message/create.php")) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link   <?= (getUrl() ==  getpage("message/index.php") || getUrl() ==  getpage("message/create.php")) ? 'active' : '' ?>">
             <i class="nav-icon fas fa-comment"></i>
@@ -79,6 +82,7 @@
               الرساله
               <i class="right fas fa-angle-left"></i>
             </p>
+
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -99,6 +103,7 @@
 
 
 
+
         <li class="nav-item <?= (getUrl() ==  getpage("chefs/index.php") || getUrl() ==  getpage("chefs/create.php")) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("chefs/index.php") || getUrl() ==  getpage("chefs/create.php")) ? 'active' : '' ?>">
             <i class="nav-icon fas fa-cookie"></i>
@@ -106,6 +111,7 @@
               الطباخ
               <i class="right fas fa-angle-left"></i>
             </p>
+
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -122,6 +128,7 @@
             </li>
           </ul>
         </li>
+
 
 
 
@@ -163,6 +170,7 @@
               حول المواقع
               <i class="right fas fa-angle-left"></i>
             </p>
+
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -191,6 +199,7 @@
               الإخبارية
               <i class="right fas fa-angle-left"></i>
             </p>
+
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -219,6 +228,7 @@
               معرض الصور
               <i class="right fas fa-angle-left"></i>
             </p>
+
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
