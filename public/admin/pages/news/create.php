@@ -39,15 +39,13 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
           <div class="card-header">
             <h3 class="card-title">إنشاء إخبارية</h3>
           </div>
+
+
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
-
               <div class='alert alert-success'>تم التسجيل بنجاح</div>
-
             <?php elseif (isset($_SESSION['errors']["db"])) : ?>
-
               <div class='alert alert-danger'>خطاء في التسجيل</div>
-
             <?php endif; ?>
 
           </div>
@@ -56,7 +54,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
           <div class="card-body">
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="<?= getCntrollor("admin/news/create.php"); ?>" method="post">
+            <form id="quickForm" action="<?= getCntrollor("admin/news/create.php"); ?>" method="post" enctype="multipart/form-data">
               <div class="card-body">
                 <div class="form-group">
                   <label for="name">الأسم</label>

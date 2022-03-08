@@ -43,7 +43,7 @@ $chefs = select($conn, "chefs", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">الرسايل</h3>
+                            <h3 class="card-title">بيانات الشيف </h3>
                         </div>
 
 

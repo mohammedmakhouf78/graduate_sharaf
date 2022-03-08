@@ -2,8 +2,8 @@
 
 include __DIR__ . "/../../../functions/function.php";
 
-
 if (isset($_POST['name'])) {
+    
 
     $name = $_POST['name'];
     validateString($name, "name", "error in name ", getpage("chefs/create.php"));

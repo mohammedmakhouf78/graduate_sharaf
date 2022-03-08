@@ -37,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">إنشاء معرض</h3>
+            <h3 class="card-title"> إضافة صور</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>

@@ -102,12 +102,14 @@ if (isset($_GET['id'])) {
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="Password">رساله</label>
-                                        <input type="text" name="message" class="form-control" id="message" value="<?= $OldData['message'] ?>">
+                                        <label for="message">الرسالة</label>
+                                        <br>
+                                        <textarea name="message" id="message" cols="128" rows="10"><?= $OldData['message'] ?></textarea>
                                         <?php if (isset($_SESSION['errors']['message'])) : ?>
-                                            <p class=" text-danger"><?= $_SESSION['errors']['message'] ?></p>
+                                            <p class="text-danger"><?= $_SESSION['errors']['message'] ?></p>
                                         <?php endif ?>
                                     </div>
+
 
 
 

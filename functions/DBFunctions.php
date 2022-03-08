@@ -39,6 +39,14 @@ function select($conn, $table, $columns)
   return  mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
+function selectDesc($conn, $table, $columns)
+{
+  $query = "SELECT $columns FROM $table order by `id` desc";
+  $result = mysqli_query($conn, $query);
+  return  mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+
 function selectWhere($conn, $table, $columns, $where)
 {
   $query = "SELECT $columns FROM $table WHERE $where";
