@@ -5,7 +5,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$news = select($conn, "news", "*");
+//$news = select($conn, "news", "*");
+$news = selectDesc($conn, "news", "*");
 
 
 ?>
@@ -63,6 +64,7 @@ $news = select($conn, "news", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الأسم</th>
                                         <th>الصور</th>
@@ -75,12 +77,14 @@ $news = select($conn, "news", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($news as $new) : ?>
+                                    <?php foreach ($news as $key => $new) : ?>
                                         <tr>
+                                            <td><?= ++$key ?></td>
                                             <td><?= $new['id'] ?></td>
                                             <td><?= $new['name'] ?></td>
-
-                                            <td><?= $new['image'] ?></td>
+                                            <td>
+                                                <img src="<?= getImage('news/' . $new['image']) ?>" alt="" width="150" height="150">
+                                            </td>
                                             <td><?= $new['date'] ?></td>
                                             <td><?= $new['title'] ?></td>
                                             <td><?= $new['description'] ?></td>
@@ -94,6 +98,7 @@ $news = select($conn, "news", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الأسم</th>
                                         <th>الصور</th>

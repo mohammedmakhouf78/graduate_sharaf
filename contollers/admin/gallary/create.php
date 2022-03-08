@@ -8,9 +8,15 @@ if (isset($_POST['title'])) {
     $title = $_POST['title'];
     validateEmpty($title, "title", "error in title ", getpage("gallary/create.php"));
 
-    $image = $_POST['image'];
-    validateEmpty($image, "image", "error in image ", getpage("gallary/create.php"));
-
+    //image
+    $is_valid = validateImage("image", "error in image ", getpage("gallary/create.php"));
+    if ($is_valid == true) {
+        $image = upoalImage("image", "gallary", "gallary");
+        if ($image == false) {
+            addErrorsToSession("image", "Error In Uploading The Image");
+            header(getpage('gallary/create.php'));
+        }
+    }
 
     $data = array(
         "title" => $title,

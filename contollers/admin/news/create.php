@@ -8,20 +8,15 @@ if (isset($_POST['name'])) {
     $name = $_POST['name'];
     validateEmpty($name, "name", "error in name ", getpage("news/create.php"));
 
-
     //image
-
-
     $is_valid = validateImage("image", "error in image ", getpage("news/create.php"));
     if ($is_valid == true) {
-        $type = $_FILES["image"]["type"];
-        $Ext = explode("/", $type)[1];
-        $image_name = $_FILES["image"]["tmp_name"];
-        $rand = rand(1000, 1000000);
-        move_uploaded_file($image_name, ROOT . "/public/images/news/news$rand.$Ext");
+        $image = upoalImage("image", "news", "news");
+        if ($image == false) {
+            addErrorsToSession("image", "Error In Uploading The Image");
+            header(getpage('news/create.php'));
+        }
     }
-
-
 
     $date = $_POST['date'];
     validateEmpty($date, "date", "error in date ", getpage("news/create.php"));

@@ -17,6 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
 
+
 <div class="content-wrapper">
 
   <div class="content-header">
@@ -37,7 +38,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title"> إضافة صور</h3>
+            <h3 class="card-title">إنشاء تعليق</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
@@ -52,42 +53,59 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
           </div>
 
+
           <div class="card-body">
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="<?= getCntrollor("admin/gallary/create.php"); ?>" method="post" enctype="multipart/form-data">
+            <form id="quickForm" action="<?= getCntrollor("admin/feedback/create.php"); ?>" method="post">
               <div class="card-body">
+
+
                 <div class="form-group">
-                  <label for="title"> العنوان</label>
-                  <input type="title" name="title" class="form-control" id="title">
-                  <?php if (isset($_SESSION['errors']['title'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['title'] ?></p>
-                  <?php endif ?>
-                </div>
-                <div class="form-group">
-                  <label for="image">الصور</label>
-                  <input type="file" name="image" class="form-control" id="image">
-                  <?php if (isset($_SESSION['errors']['image'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
+                  <label for="name"> الأسم </label>
+                  <input type="text" name="name" class="form-control" id="name">
+                  <?php if (isset($_SESSION['errors']['name'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
                   <?php endif ?>
                 </div>
 
+                <div class="form-group">
+                  <label for="message">الرسالة</label>
+                  <br>
+                  <textarea name="message" id="message" cols="128" rows="10"></textarea>
+                  <?php if (isset($_SESSION['errors']['message'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['message'] ?></p>
+                  <?php endif ?>
+                </div>
+
+                <div class="form-group">
+                  <label for="job">الوظيفة</label>
+                  <input type="job" name="job" class="form-control" id="job">
+                  <?php if (isset($_SESSION['errors']['job'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['job'] ?></p>
+                  <?php endif ?>
+                </div>
+
+
+
+
+
+
               </div>
           </div>
-          <!-- /.card-body -->
+
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">إرسال</button>
           </div>
           </form>
         </div>
-        <!-- /.card -->
+
+
       </div>
-      <!--/.col (left) -->
-      <!-- right column -->
+
   </section>
-  <!-- /.content -->
+
 </div>
-<!-- /.content-wrapper -->
 
 
 <?php include layouts("footer.php"); ?>

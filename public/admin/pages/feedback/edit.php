@@ -3,8 +3,9 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $OldData = selectWhere($conn, 'gallary', '*', "id = $id")[0];
+    $OldData = selectWhere($conn, 'feedback', '*', "id = $id")[0];
 }
+
 ?>
 
 
@@ -17,6 +18,7 @@ if (isset($_GET['id'])) {
 
 <?php include layouts("navbar.php"); ?>
 <?php include layouts("aside.php"); ?>
+
 
 
 
@@ -40,13 +42,12 @@ if (isset($_GET['id'])) {
                 <!-- jquery validation -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">تعديل المعرض</h3>
+                        <h3 class="card-title">تعديل التعليقات</h3>
                     </div>
-                    <!-- ليس لها اي فائده -->
                     <div>
                         <?php if (isset($_SESSION['successful']["db"])) :  ?>
 
-                            <div class='alert alert-success'>تم التعديل بنجاح</div>
+                            <div class='alert alert-success'>تم التسجيل بنجاح</div>
 
                         <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
@@ -60,22 +61,42 @@ if (isset($_GET['id'])) {
                     <div class="card-body">
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="quickForm" action="<?= getCntrollor("admin/gallary/update.php"); ?>" method="post" enctype="multipart/form-data">
+                        <form id="quickForm" action="<?= getCntrollor("admin/feedback/update.php"); ?>" method="post">
                             <div class="card-body">
                                 <input type="hidden" name="id" value="<?= $OldData['id'] ?>">
-                                <div class="form-group">
-                                    <label for="title"> العنوان</label>
-                                    <input type="title" name="title" class="form-control" id="title" value="<?= $OldData['title'] ?>">
-                                    <?php if (isset($_SESSION['errors']['title'])) : ?>
-                                        <p class="text-danger"><?= $_SESSION['errors']['title'] ?></p>
-                                    <?php endif ?>
-                                </div>
-                                <div class="form-group">  <? // في حالة if ?>
-                                    <label for="image">الصور</label>
-                                    <input type="file" name="image" class="form-control" id="image"  value="<?= $OldData['image'] ?>">
-                                    <?php if (isset($_SESSION['errors']['image'])) : ?>
-                                        <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
-                                    <?php endif ?>
+                                <div class="card-body">
+
+
+                                    <div class="form-group">
+                                        <label for="name">الأسم</label>
+                                        <input type="text" name="name" class="form-control" id="name" value="<?= $OldData['name'] ?>">
+                                        <?php if (isset($_SESSION['errors']['name'])) : ?>
+                                            <p class=" text-danger"><?= $_SESSION['errors']['name'] ?></p>
+                                        <?php endif ?>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message">الرسالة</label>
+                                        <br>
+                                        <textarea name="message" id="message" cols="128" rows="10"><?= $OldData['message'] ?></textarea>
+                                        <?php if (isset($_SESSION['errors']['message'])) : ?>
+                                            <p class="text-danger"><?= $_SESSION['errors']['message'] ?></p>
+                                        <?php endif ?>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="job">الوظيفة</label>
+                                        <input type="job" name="job" class="form-control" id="job" value="<?= $OldData['job'] ?>">
+                                        <?php if (isset($_SESSION['errors']['job'])) : ?>
+                                            <p class=" text-danger"><?= $_SESSION['errors']['job'] ?></p>
+                                        <?php endif ?>
+                                    </div>
+
+
+
+
+
+
                                 </div>
                             </div>
                     </div>

@@ -5,7 +5,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$message = select($conn, "messages", "*");
+//$message = select($conn, "messages", "*");
+$message = selectDesc($conn, "messages", "*");
 
 
 ?>
@@ -64,6 +65,7 @@ $message = select($conn, "messages", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th> الاسم الاول</th>
                                         <th> الاسم الاخير</th>
@@ -75,8 +77,9 @@ $message = select($conn, "messages", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($message as $user) : ?>
+                                    <?php foreach ($message as $key =>  $user) : ?>
                                         <tr>
+                                            <td><?= ++$key ?></td>
                                             <td><?= $user['id'] ?></td>
                                             <td><?= $user['first_name'] ?></td>
                                             <td><?= $user['last_name'] ?></td>
@@ -93,6 +96,7 @@ $message = select($conn, "messages", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th> الاسم الاول</th>
                                         <th> الاسم الاخير</th>

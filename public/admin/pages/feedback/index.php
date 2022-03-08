@@ -4,8 +4,9 @@
 
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
-//$abouts = select($conn, "about", "*");
-$abouts = selectDesc($conn, "about", "*");
+
+//$message = select($conn, "feedback", "*");
+$feedbacks = selectDesc($conn, "feedback", "*");
 
 
 ?>
@@ -18,6 +19,7 @@ $abouts = selectDesc($conn, "about", "*");
 
 <?php include layouts("navbar.php"); ?>
 <?php include layouts("aside.php"); ?>
+
 
 
 <div class="content-wrapper">
@@ -42,7 +44,7 @@ $abouts = selectDesc($conn, "about", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات الموقع</h3>
+                            <h3 class="card-title">التعليقات</h3>
                         </div>
 
 
@@ -54,9 +56,10 @@ $abouts = selectDesc($conn, "about", "*");
 
                             <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
-                                <div class='alert alert-danger'><?= $_SESSION['errors']['db'] ?></div>
+                                <div class='alert alert-danger'><?= $_SESSION['error']['db'] ?></div>
 
                             <?php endif; ?>
+
 
 
                             <table id="example1" class="table table-bordered table-striped">
@@ -64,30 +67,24 @@ $abouts = selectDesc($conn, "about", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>العنوان</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>التلفون</th>
-                                        <th>الفتح</th>
-                                        <th>الاغلاق</th>
+                                        <th> الإسم </th>
+                                        <th>الرساله</th>
+                                        <th>الوظيفة</th>
                                         <th>التحكم</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($abouts as $key => $about) : ?>
+                                    <?php foreach ($feedbacks as $key =>  $feedback) : ?>
                                         <tr>
                                             <td><?= ++$key ?></td>
-                                            <td><?= $about['id'] ?></td>
-                                            <td><?= $about['address'] ?></td>
-                                            <td><?= $about['email'] ?></td>
-                                            <td><?= $about['phone'] ?></td>
-                                            <td><?= $about['open'] ?></td>
-                                            <td><?= $about['close'] ?></td>
+                                            <td><?= $feedback['id'] ?></td>
+                                            <td><?= $feedback['name'] ?></td>
+                                            <td><?= $feedback['message'] ?></td>
+                                            <td><?= $feedback['job'] ?></td>
                                             <td>
-                                                <a class="btn btn-success" href="<?= getpage("about/edit.php"); ?>?id=<?= $about['id'] ?>">تعديل</a>
-
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/about/delete.php"); ?>?id=<?= $about['id'] ?>">حذف</a>
+                                                <a class="btn btn-success" href="<?= getpage("feedback/edit.php"); ?>?id=<?= $feedback['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/feedback/delete.php"); ?>?id=<?= $feedback['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -97,11 +94,9 @@ $abouts = selectDesc($conn, "about", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>العنوان</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>التلفون</th>
-                                        <th>الفتح</th>
-                                        <th>الاغلاق</th>
+                                        <th> الإسم </th>
+                                        <th>الرساله</th>
+                                        <th>الوظيفة</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>

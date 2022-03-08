@@ -5,7 +5,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-$gallarys = select($conn, "gallary", "*");
+//$gallarys = select($conn, "gallary", "*");
+$gallarys = selectDesc($conn, "gallary", "*");
 
 
 ?>
@@ -63,6 +64,7 @@ $gallarys = select($conn, "gallary", "*");
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الصور</th>
                                         <th>العنوان</th>
@@ -71,13 +73,15 @@ $gallarys = select($conn, "gallary", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($gallarys as $gallary) : ?>
+                                    <?php foreach ($gallarys as $key => $gallary) : ?>
                                         <tr>
+                                            <td><?= ++$key ?></td>
                                             <td><?= $gallary['id'] ?></td>
-                                            <td><?= $gallary['image'] ?></td>
+                                            <td>
+                                                <img src="<?= getImage('gallary/' . $gallary['image']) ?>" alt="" width="150" height="150">
+                                            </td>
                                             <td><?= $gallary['title'] ?></td>
                                             <td>
-
                                                 <a class="btn btn-success" href="<?= getpage("gallary/edit.php"); ?>?id=<?= $gallary['id'] ?>">تعديل</a>
                                                 <a class="btn btn-danger" href="<?= getCntrollor("admin/gallary/delete.php"); ?>?id=<?= $gallary['id'] ?>">حذف</a>
                                             </td>
@@ -87,6 +91,7 @@ $gallarys = select($conn, "gallary", "*");
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>التسلسل</th>
                                         <th>الرقم</th>
                                         <th>الصور</th>
                                         <th>العنوان</th>

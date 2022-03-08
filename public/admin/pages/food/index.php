@@ -4,8 +4,12 @@
 
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
-//$abouts = select($conn, "about", "*");
-$abouts = selectDesc($conn, "about", "*");
+
+//$food = select($conn, "food", "*");
+$foods = selectDesc($conn, "food", "*");
+
+
+
 
 
 ?>
@@ -42,7 +46,7 @@ $abouts = selectDesc($conn, "about", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات الموقع</h3>
+                            <h3 class="card-title">بيانات الطلبات</h3>
                         </div>
 
 
@@ -54,9 +58,10 @@ $abouts = selectDesc($conn, "about", "*");
 
                             <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
-                                <div class='alert alert-danger'><?= $_SESSION['errors']['db'] ?></div>
+                                <div class='alert alert-danger'><?= $_SESSION['error']['db'] ?></div>
 
                             <?php endif; ?>
+
 
 
                             <table id="example1" class="table table-bordered table-striped">
@@ -64,30 +69,24 @@ $abouts = selectDesc($conn, "about", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>العنوان</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>التلفون</th>
-                                        <th>الفتح</th>
-                                        <th>الاغلاق</th>
+                                        <th>الأسم</th>
+                                        <th>السعر</th>
                                         <th>التحكم</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($abouts as $key => $about) : ?>
+                                    <?php foreach ($foods as $key => $food) : ?>
                                         <tr>
                                             <td><?= ++$key ?></td>
-                                            <td><?= $about['id'] ?></td>
-                                            <td><?= $about['address'] ?></td>
-                                            <td><?= $about['email'] ?></td>
-                                            <td><?= $about['phone'] ?></td>
-                                            <td><?= $about['open'] ?></td>
-                                            <td><?= $about['close'] ?></td>
-                                            <td>
-                                                <a class="btn btn-success" href="<?= getpage("about/edit.php"); ?>?id=<?= $about['id'] ?>">تعديل</a>
+                                            <td><?= $food['id'] ?></td>
+                                            <td><?= $food['name'] ?></td>
+                                            <td><?= $food['price'] ?></td>
 
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/about/delete.php"); ?>?id=<?= $about['id'] ?>">حذف</a>
+                                            <td>
+
+                                                <a class="btn btn-success" href="<?= getpage("food/edit.php"); ?>?id=<?= $food['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/food/delete.php"); ?>?id=<?= $food['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -97,11 +96,8 @@ $abouts = selectDesc($conn, "about", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>العنوان</th>
-                                        <th>البريد الإلكتروني</th>
-                                        <th>التلفون</th>
-                                        <th>الفتح</th>
-                                        <th>الاغلاق</th>
+                                        <th>الأسم</th>
+                                        <th>السعر</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>

@@ -30,3 +30,23 @@ function getUrl()
 {
     return $_SERVER['REQUEST_URI'];
 }
+
+
+/**
+ * getImage
+ *
+ * @param  mixed $path
+ * @return void 
+ */
+function getImage(string $path)
+{
+
+    return "/public/images/$path";
+}
+
+
+function getImageRoot(string $path)
+{
+    return ROOT . "/public/images/$path";
+}
+

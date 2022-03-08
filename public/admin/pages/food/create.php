@@ -37,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title"> إضافة صور</h3>
+            <h3 class="card-title">إضافة الواجبة</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
@@ -52,25 +52,40 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
           </div>
 
+
           <div class="card-body">
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="<?= getCntrollor("admin/gallary/create.php"); ?>" method="post" enctype="multipart/form-data">
+            <form id="quickForm" action="<?= getCntrollor("admin/food/create.php"); ?>" method="post">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="title"> العنوان</label>
-                  <input type="title" name="title" class="form-control" id="title">
-                  <?php if (isset($_SESSION['errors']['title'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['title'] ?></p>
+                  <label for="name">الأسم</label>
+                  <input type="text" name="name" class="form-control" id="name">
+                  <?php if (isset($_SESSION['errors']['name'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
                   <?php endif ?>
                 </div>
                 <div class="form-group">
-                  <label for="image">الصور</label>
-                  <input type="file" name="image" class="form-control" id="image">
-                  <?php if (isset($_SESSION['errors']['image'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
+                  <label for="price">خصم</label>
+                  <input type="text" name="price" class="form-control" id="price">
+                  <?php if (isset($_SESSION['errors']['price'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['price'] ?></p>
                   <?php endif ?>
                 </div>
+
+                //////////////////////////////////
+                <div class="form-group">
+                <label for="price"></label>
+                  <select class="form-select form-control" aria-label="Default select example" id="price">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+
+
+
 
               </div>
           </div>
@@ -84,6 +99,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
       </div>
       <!--/.col (left) -->
       <!-- right column -->
+
   </section>
   <!-- /.content -->
 </div>
