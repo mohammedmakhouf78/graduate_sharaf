@@ -42,10 +42,12 @@
         <li class="nav-item <?= (getUrl() ==  getpage("users/index.php") || getUrl() ==  getpage("users/create.php")) ? 'menu-open' : '' ?>">
 
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("users/index.php") || getUrl() ==  getpage("users/create.php")) ? 'active' : '' ?>">
-            <i class="nav-icon fas fa-user"></i>
+            <i class="nav-icon fas fa-user-clock"></i>
+            
             <p>
               المستخدم
               <i class="right fas fa-angle-left"></i>
+              
 
 
             </p>
@@ -101,7 +103,7 @@
 
         <li class="nav-item <?= (getUrl() ==  getpage("chefs/index.php") || getUrl() ==  getpage("chefs/create.php")) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("chefs/index.php") || getUrl() ==  getpage("chefs/create.php")) ? 'active' : '' ?>">
-            <i class="nav-icon fas fa-cookie"></i>
+            <i class="nav-icon fas fa-user-cog"></i>
             <p>
               الطباخ
               <i class="right fas fa-angle-left"></i>
@@ -158,7 +160,9 @@
 
         <li class="nav-item <?= (getUrl() ==  getpage("about/index.php") || getUrl() ==  getpage("about/create.php")) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("about/index.php") || getUrl() ==  getpage("about/create.php")) ? 'active' : '' ?>">
-            <i class="far fa-address-card nav-icon"></i>
+            <i class="nav-icon fas fa-address-card"></i>
+           
+
             <p>
               حول المواقع
               <i class="right fas fa-angle-left"></i>
@@ -186,7 +190,9 @@
 
         <li class="nav-item <?= (getUrl() ==  getpage("news/index.php") || getUrl() ==  getpage("news/create.php")) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("news/index.php") || getUrl() ==  getpage("news/create.php")) ? 'active' : '' ?>">
-            <i class="nav-icon fas fa-image"></i>
+            <i class="nav-icon fas fa-newspaper"></i>
+
+
             <p>
               الإخبارية
               <i class="right fas fa-angle-left"></i>
@@ -214,7 +220,8 @@
 
         <li class="nav-item  <?= (getUrl() ==  getpage("gallary/index.php") || getUrl() ==  getpage("gallary/create.php")) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link   <?= (getUrl() ==  getpage("gallary/index.php") || getUrl() ==  getpage("gallary/create.php")) ? 'active' : '' ?>">
-            <i class="fas fa-camera nav-icon"></i>
+            <i class="nav-icon fas fa-images"></i>
+
             <p>
               معرض الصور
               <i class="right fas fa-angle-left"></i>
@@ -235,6 +242,85 @@
             </li>
           </ul>
         </li>
+
+
+        <li class="nav-item <?= (getUrl() ==  getpage("categories/index.php") || getUrl() ==  getpage("categories/create.php")) ? 'menu-open' : '' ?>">
+          <a href="#" class="nav-link  <?= (getUrl() ==  getpage("categories/index.php") || getUrl() ==  getpage("categories/create.php")) ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-hand-rock"></i>
+
+
+            <p>
+              التصنيفات
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("categories/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("categories/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                <p>إدخال بيانات التصنيفات</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("categories/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("categories/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار بيانات التصنيفات</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item <?= (getUrl() ==  getpage("food/index.php") || getUrl() ==  getpage("food/create.php")) ? 'menu-open' : '' ?>">
+          <a href="#" class="nav-link  <?= (getUrl() ==  getpage("food/index.php") || getUrl() ==  getpage("food/create.php")) ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-utensils"></i>
+            <p>
+              الوجبات
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("food/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("food/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                <p>إدخال بيانات</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("food/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("food/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار البيانات للوجبات</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item <?= (getUrl() ==  getpage("feedback/index.php") || getUrl() ==  getpage("feedback/create.php")) ? 'menu-open' : '' ?>">
+          <a href="#" class="nav-link  <?= (getUrl() ==  getpage("feedback/index.php") || getUrl() ==  getpage("feedback/create.php")) ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-comments"></i>
+
+            <p>
+              التعليقات
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("feedback/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("feedback/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                <p>إضافة بيانات التعليقات</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("feedback/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("feedback/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار بيانات التعليقات</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

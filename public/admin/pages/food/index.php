@@ -5,8 +5,11 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-//$gallarys = select($conn, "gallary", "*");
-$gallarys = selectDesc($conn, "gallary", "*");
+//$food = select($conn, "food", "*");
+$foods = selectDesc($conn, "food", "*");
+
+
+
 
 
 ?>
@@ -43,7 +46,7 @@ $gallarys = selectDesc($conn, "gallary", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات المعرض</h3>
+                            <h3 class="card-title">بيانات الطلبات</h3>
                         </div>
 
 
@@ -55,7 +58,7 @@ $gallarys = selectDesc($conn, "gallary", "*");
 
                             <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
-                                <div class='alert alert-danger'><?= $_SESSION['errors']['db'] ?></div>
+                                <div class='alert alert-danger'><?= $_SESSION['error']['db'] ?></div>
 
                             <?php endif; ?>
 
@@ -66,24 +69,24 @@ $gallarys = selectDesc($conn, "gallary", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>الصور</th>
-                                        <th>العنوان</th>
+                                        <th>الأسم</th>
+                                        <th>السعر</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($gallarys as $key => $gallary) : ?>
+                                    <?php foreach ($foods as $key => $food) : ?>
                                         <tr>
                                             <td><?= ++$key ?></td>
-                                            <td><?= $gallary['id'] ?></td>
+                                            <td><?= $food['id'] ?></td>
+                                            <td><?= $food['name'] ?></td>
+                                            <td><?= $food['price'] ?></td>
+
                                             <td>
-                                                <img src="<?= getImage('gallary/' . $gallary['image']) ?>" alt="" width="150" height="150">
-                                            </td>
-                                            <td><?= $gallary['title'] ?></td>
-                                            <td>
-                                                <a class="btn btn-success" href="<?= getpage("gallary/edit.php"); ?>?id=<?= $gallary['id'] ?>">تعديل</a>
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/gallary/delete.php"); ?>?id=<?= $gallary['id'] ?>">حذف</a>
+
+                                                <a class="btn btn-success" href="<?= getpage("food/edit.php"); ?>?id=<?= $food['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/food/delete.php"); ?>?id=<?= $food['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -93,8 +96,8 @@ $gallarys = selectDesc($conn, "gallary", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>الصور</th>
-                                        <th>العنوان</th>
+                                        <th>الأسم</th>
+                                        <th>السعر</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>
