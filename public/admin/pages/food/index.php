@@ -6,7 +6,14 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
 //$food = select($conn, "food", "*");
-$foods = selectDesc($conn, "food", "*");
+
+$foods = query($conn, "SELECT
+food.id,
+food.name,
+food.price,
+categories.name as nameCareg
+FROM food JOIN categories ON food.category_id  = categories.id ");
+
 
 
 
@@ -71,6 +78,7 @@ $foods = selectDesc($conn, "food", "*");
                                         <th>الرقم</th>
                                         <th>الأسم</th>
                                         <th>السعر</th>
+                                        <th>اسم الصنف</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </thead>
@@ -82,6 +90,7 @@ $foods = selectDesc($conn, "food", "*");
                                             <td><?= $food['id'] ?></td>
                                             <td><?= $food['name'] ?></td>
                                             <td><?= $food['price'] ?></td>
+                                            <td><?= $food['nameCareg'] ?></td>
 
                                             <td>
 
@@ -98,6 +107,7 @@ $foods = selectDesc($conn, "food", "*");
                                         <th>الرقم</th>
                                         <th>الأسم</th>
                                         <th>السعر</th>
+                                        <th>اسم الصنف</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>

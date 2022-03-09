@@ -6,6 +6,7 @@ if (isset($_GET['id'])) {
     $OldData = selectWhere($conn, 'feedback', '*', "id = $id")[0];
     $users = select($conn, "users", "id , name");
 }
+$users = select($conn, "users", "id , name");
 
 ?>
 

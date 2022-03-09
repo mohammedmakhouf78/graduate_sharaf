@@ -1,7 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
-
+$categoriess = select($conn, "categories", "id , name");
 
 
 ?>
@@ -73,17 +73,16 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
                   <?php endif ?>
                 </div>
 
-                //////////////////////////////////
                 <div class="form-group">
-                <label for="price"></label>
-                  <select class="form-select form-control" aria-label="Default select example" id="price">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  <label for="category_id">name category_id</label>
+                  <select name="category_id" id="category_id" class="form-control">
+                    <?php foreach ($categoriess as $categories) : ?>
+                      <option value="<?= $categories['id'] ?>">
+                        <?= $categories['name'] ?>
+                      </option>
+                    <?php endforeach ?>
                   </select>
                 </div>
-
 
 
 
