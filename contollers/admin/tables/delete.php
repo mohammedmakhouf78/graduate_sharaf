@@ -3,17 +3,14 @@ include __DIR__ . "/../../../functions/function.php";
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $oldImage = selectWhere($conn, "sliders", "image", "id = $id")[0]["image"];
-
-    $result = delete($conn, "sliders", $id);
+    $result = delete($conn, "users", $id);
     if ($result) {
-        deletImage("sliders", $oldImage);
         addSuccessToSession("db", "تم الحذف بنجاح");
     } else {
         addErrorsToSession("db", "خطأ في الحذف");
     }
 
-    redirect(getpage("sliders/index.php"));
+    redirect(getpage("users/index.php"));
 } else {
-    redirect(getpage("sliders/index.php"));
+    redirect(getpage("users/index.php"));
 }

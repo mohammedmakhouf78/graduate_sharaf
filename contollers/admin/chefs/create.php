@@ -3,13 +3,22 @@
 include __DIR__ . "/../../../functions/function.php";
 
 if (isset($_POST['name'])) {
-    
+
 
     $name = $_POST['name'];
     validateString($name, "name", "error in name ", getpage("chefs/create.php"));
 
-    $imges = $_POST['imges'];
-    imges($imges, "imges", "error in imges ", getpage("chefs/create.php"));
+    $is_image = validateImage('image', "error in image ", getpage("chefs/create.php"));
+    if ($is_image == true) {
+
+        $image = upoalImage('image', 'chef', 'chef');
+
+
+        if ($image == false) {
+            addErrorsToSession('image', 'Error In Uploading The Image');
+            header("location:getpage('chefs/create.php')");
+        }
+    }
 
     $job = $_POST['job'];
     validateString($job, "job", "error in job ", getpage("chefs/create.php"));
@@ -27,12 +36,13 @@ if (isset($_POST['name'])) {
 
     $data = array(
         "name" => $name,
-        "image" => $imges,
+        "image" => $image,
         "job" => $job,
         "facebook" => $facebook,
         "twitter" => $twitter,
         "linked_in" => $linked_in,
     );
+
 
     $result = insert($conn, "chefs", $data);
 

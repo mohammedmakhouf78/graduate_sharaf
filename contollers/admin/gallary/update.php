@@ -49,10 +49,7 @@ if (isset($_POST['title'])) {
     if ($result) {
 
         if ($image != "") {
-
             deletImage("gallary", $oldImage);
-            
-            
         }
         addSuccessToSession("db", "تم التعديل بنجاح");
     } else {

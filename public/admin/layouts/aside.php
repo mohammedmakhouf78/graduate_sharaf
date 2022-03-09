@@ -44,15 +44,15 @@
 
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("users/index.php") || getUrl() ==  getpage("users/create.php")) ? 'active' : '' ?>">
             <i class="nav-icon fas fa-user-clock"></i>
-            
+
             <p>
               المستخدم
               <i class="right fas fa-angle-left"></i>
-              
 
 
 
-          </p>
+
+            </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
@@ -168,7 +168,7 @@
         <li class="nav-item <?= (getUrl() ==  getpage("about/index.php") || getUrl() ==  getpage("about/create.php")) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("about/index.php") || getUrl() ==  getpage("about/create.php")) ? 'active' : '' ?>">
             <i class="nav-icon fas fa-address-card"></i>
-           
+
 
             <p>
               حول المواقع
@@ -326,6 +326,31 @@
               <a href="<?= getpage("feedback/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("feedback/index.php") ? 'active' : '' ?>">
                 <i class="fas fa-users nav-icon"></i>
                 <p>إظهار بيانات التعليقات</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item <?= (getUrl() ==  getpage("tables/index.php") || getUrl() ==  getpage("tables/create.php")) ? 'menu-open' : '' ?>">
+          <a href="#" class="nav-link  <?= (getUrl() ==  getpage("tables/index.php") || getUrl() ==  getpage("tables/create.php")) ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-comments"></i>
+
+            <p>
+              الطولات
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("tables/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("tables/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                <p>إضافة بيانات الطولات</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("tables/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("tables/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار بيانات الطولات</p>
               </a>
             </li>
           </ul>

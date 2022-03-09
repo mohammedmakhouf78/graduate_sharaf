@@ -3,6 +3,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
+
 ?>
 <?php include layouts("header.php"); ?>
 
@@ -13,6 +14,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 <?php include layouts("navbar.php"); ?>
 <?php include layouts("aside.php"); ?>
+
 
 
 <div class="content-wrapper">
@@ -35,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
         <!-- jquery validation -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">إضافة انزلاق</h3>
+            <h3 class="card-title">إنشاء مستخدم</h3>
           </div>
           <div>
             <?php if (isset($_SESSION['successful']["db"])) :  ?>
@@ -54,62 +56,52 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
           <div class="card-body">
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="<?= getCntrollor("admin/sliders/create.php"); ?>" method="post" enctype="multipart/form-data">
+            <form id="quickForm" action="<?= getCntrollor("admin/tables/create.php"); ?>" method="post">
               <div class="card-body">
 
 
-
-
                 <div class="form-group">
-                  <label for="imges">الصوره</label>
-                  <input type="file" name="imges" class="form-control" id="imges">
-                  <?php if (isset($_SESSION['errors']['image'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
+                  <label for="chairs"> الكراسي</label>
+                  <input type="text" name="chairs" class="form-control" id="chairs">
+                  <?php if (isset($_SESSION['errors']['chairs'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['chairs'] ?></p>
                   <?php endif ?>
                 </div>
 
                 <div class="form-group">
-                  <label for="title">العنوان</label>
-                  <input type="text" name="title" class="form-control" id="title">
-                  <?php if (isset($_SESSION['errors']['title'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['title'] ?></p>
-                  <?php endif ?>
-                </div>
-
-                <div class="form-group">
-                  <label for="description">الواصف</label>
-                  <br>
-                  <textarea name="description" id="description" cols="128" rows="10"></textarea>
-                  <?php if (isset($_SESSION['errors']['description'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['description'] ?></p>
-                  <?php endif ?>
-                </div>
-
-                <div class="form-group">
-                  <label for="discount">خصم</label>
-                  <input type="text" name="discount" class="form-control" id="discount">
-                  <?php if (isset($_SESSION['errors']['discount'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['discount'] ?></p>
+                  <label for="is_booked">الحجز</label>
+                  <input type="is_booked" name="is_booked" class="form-control" id="is_booked">
+                  <?php if (isset($_SESSION['errors']['is_booked'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['is_booked'] ?></p>
                   <?php endif ?>
                 </div>
 
 
 
+                <div class="form-group mb-0">
+                  <div class="custom-control custom-checkbox">
+
+
+                    <label class="custom-control-label" for="is_admin">هل انت المشرف</label>
+                  </div>
+                </div>
               </div>
           </div>
-
+          <!-- /.card-body -->
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">إرسال</button>
           </div>
           </form>
         </div>
-
-
+        <!-- /.card -->
       </div>
+      <!--/.col (left) -->
+      <!-- right column -->
 
   </section>
-
+  <!-- /.content -->
 </div>
+<!-- /.content-wrapper -->
 
 
 <?php include layouts("footer.php"); ?>
