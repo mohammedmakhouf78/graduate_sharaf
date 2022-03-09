@@ -48,11 +48,7 @@ if (isset($_POST['name'])) {
     if ($result) {
 
         if ($image != "") {
-            $oldImage = getImageRoot("categories/$oldImage");
-            if( file_exists($oldImage)){
-                unlink($oldImage);
-           
-            }
+            deletImage("categories", $oldImage);
 
             
         }

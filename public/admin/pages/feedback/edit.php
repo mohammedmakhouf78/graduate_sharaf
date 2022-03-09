@@ -4,6 +4,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $OldData = selectWhere($conn, 'feedback', '*', "id = $id")[0];
+    $users = select($conn, "users", "id , name");
 }
 
 ?>
@@ -90,6 +91,17 @@ if (isset($_GET['id'])) {
                                         <?php if (isset($_SESSION['errors']['job'])) : ?>
                                             <p class=" text-danger"><?= $_SESSION['errors']['job'] ?></p>
                                         <?php endif ?>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="user_id">name user_id</label>
+                                        <select name="user_id" id="user_id" class="form-control">
+                                            <?php foreach ($users as $user) : ?>
+                                                <option value="<?= $user['id'] ?>">
+                                                    <?= $user['name'] ?>
+                                                </option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
 
 

@@ -64,13 +64,7 @@ if (isset($_POST['name'])) {
     if ($result) {
 
         if ($image != "") {
-            $oldImage = getImageRoot("news/$oldImage");
-            if( file_exists($oldImage)){
-                unlink($oldImage);
-           
-            }
-
-            
+            deletImage("news", $oldImage);
         }
         addSuccessToSession("db", "تم التعديل بنجاح");
     } else {

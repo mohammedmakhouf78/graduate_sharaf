@@ -1,6 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
+$users = select($conn, "users", "id , name");
 
 
 
@@ -86,10 +87,16 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
                   <?php endif ?>
                 </div>
 
-
-
-
-
+                <div class="form-group">
+                  <label for="user_id">name user_id</label>
+                  <select name="user_id" id="user_id" class="form-control">
+                    <?php foreach ($users as $user) : ?>
+                      <option value="<?= $user['id'] ?>">
+                        <?= $user['name'] ?>
+                      </option>
+                    <?php endforeach ?>
+                  </select>
+                </div>
 
               </div>
           </div>

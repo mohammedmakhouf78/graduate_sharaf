@@ -6,7 +6,14 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
 //$message = select($conn, "feedback", "*");
-$feedbacks = selectDesc($conn, "feedback", "*");
+$feedbacks = query($conn, "SELECT
+feedback.id,
+feedback.name,
+feedback.message,
+feedback.job,
+users.name as username
+FROM feedback JOIN users ON feedback.user_id = users.id");
+
 
 
 ?>
@@ -70,6 +77,7 @@ $feedbacks = selectDesc($conn, "feedback", "*");
                                         <th> الإسم </th>
                                         <th>الرساله</th>
                                         <th>الوظيفة</th>
+                                        <th>الاسم المستخدم</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </thead>
@@ -82,6 +90,7 @@ $feedbacks = selectDesc($conn, "feedback", "*");
                                             <td><?= $feedback['name'] ?></td>
                                             <td><?= $feedback['message'] ?></td>
                                             <td><?= $feedback['job'] ?></td>
+                                            <td><?= $feedback['username'] ?></td>
                                             <td>
                                                 <a class="btn btn-success" href="<?= getpage("feedback/edit.php"); ?>?id=<?= $feedback['id'] ?>">تعديل</a>
                                                 <a class="btn btn-danger" href="<?= getCntrollor("admin/feedback/delete.php"); ?>?id=<?= $feedback['id'] ?>">حذف</a>
@@ -97,6 +106,7 @@ $feedbacks = selectDesc($conn, "feedback", "*");
                                         <th> الإسم </th>
                                         <th>الرساله</th>
                                         <th>الوظيفة</th>
+                                        <th>الاسم المستخدم</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>
