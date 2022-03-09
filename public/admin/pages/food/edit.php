@@ -5,6 +5,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $OldData = selectWhere($conn, 'food', '*', "id = $id")[0];
 }
+$categoriess = select($conn, "categories", "id , name");
 ?>
 
 
@@ -76,6 +77,16 @@ if (isset($_GET['id'])) {
                                     <?php if (isset($_SESSION['errors']['price'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['price'] ?></p>
                                     <?php endif ?>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category_id">name category_id</label>
+                                    <select name="category_id" id="category_id" class="form-control">
+                                        <?php foreach ($categoriess as $categories) : ?>
+                                            <option value="<?= $categories['id'] ?>">
+                                                <?= $categories['name'] ?>
+                                            </option>
+                                        <?php endforeach ?>
+                                    </select>
                                 </div>
 
 

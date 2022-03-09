@@ -16,7 +16,8 @@ if (isset($_POST['name'])) {
     $message = $_POST['message'];
     validateEmpty($message, "message", "error in message ", getpage("feedback/index.php"));
 
-
+    $user_id = $_POST['user_id'];
+   
 
 
 
@@ -26,6 +27,8 @@ if (isset($_POST['name'])) {
         "name" => $name,
         "job" => $job,
         "message" => $message,
+        "user_id" => $user_id,
+ 
     );
 
 

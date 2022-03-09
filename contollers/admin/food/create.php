@@ -11,11 +11,14 @@ if (isset($_POST['name'])) {
     $price = $_POST['price'];
     validateEmpty($price, "price", "error in price ", getpage("food/create.php"));
 
+    $category_id = $_POST['category_id'];
+
     
   
     $data = array(
         "name" => $name,
         "price" => $price,
+        "category_id" => $category_id,
         
     );
   
