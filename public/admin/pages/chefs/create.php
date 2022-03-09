@@ -57,7 +57,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
           <div class="card-body">
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="<?= getCntrollor("admin/chefs/create.php"); ?>" method="post">
+            <form id="quickForm" action="<?= getCntrollor("admin/chefs/create.php"); ?>" method="post" enctype="multipart/form-data">
               <div class="card-body">
 
 
@@ -70,10 +70,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
                 </div>
 
                 <div class="form-group">
-                  <label for="imges">الصوره</label>
-                  <input type="file" name="imges" class="form-control" id="imges">
-                  <?php if (isset($_SESSION['errors']['imges'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['imges'] ?></p>
+                  <label for="image">الصور</label>
+                  <input type="file" name="image" class="form-control" id="image">
+                  <?php if (isset($_SESSION['errors']['image'])) : ?>
+                    <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
                   <?php endif ?>
                 </div>
 

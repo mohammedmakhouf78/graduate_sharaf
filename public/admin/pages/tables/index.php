@@ -5,8 +5,11 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-//$chefs = select($conn, "chefs", "*");
-$chefs = selectDesc($conn, "chefs", "*");
+//$users = select($conn, "users", "*");
+$users = selectDesc($conn, "users", "*");
+
+
+
 
 
 ?>
@@ -19,7 +22,6 @@ $chefs = selectDesc($conn, "chefs", "*");
 
 <?php include layouts("navbar.php"); ?>
 <?php include layouts("aside.php"); ?>
-
 
 
 <div class="content-wrapper">
@@ -44,7 +46,7 @@ $chefs = selectDesc($conn, "chefs", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات الشيف </h3>
+                            <h3 class="card-title">بيانات المستخدمين</h3>
                         </div>
 
 
@@ -67,32 +69,32 @@ $chefs = selectDesc($conn, "chefs", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>الاسم</th>
-                                        <th> اسم الصوره</th>
-                                        <th>الوظيفه</th>
-                                        <th>facebook</th>
-                                        <th>twitter</th>
-                                        <th>linked_in</th>
+                                        <th>الأسم</th>
+                                        <th>البريد الإلكتروني</th>
+                                        <th>هل هو مشرف</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($chefs as  $key => $chef) : ?>
+                                    <?php foreach ($users as $key => $user) : ?>
                                         <tr>
                                             <td><?= ++$key ?></td>
-                                            <td><?= $chef['id'] ?></td>
-                                            <td><?= $chef['name'] ?></td>
+                                            <td><?= $user['id'] ?></td>
+                                            <td><?= $user['name'] ?></td>
+
+                                            <td><?= $user['email'] ?></td>
+
+                                            <?php if ($user['is_admin'] == 1) : ?>
+                                                <td class="text-primary">مشرف</td>
+                                            <?php else : ?>
+                                                <td class="text-danger">ليس مشرف</td>
+                                            <?php endif; ?>
+
                                             <td>
-                                                <img src="<?= getImage('chef/' . $chef['image']) ?>" alt="" width="150">
-                                            </td>
-                                            <td><?= $chef['job'] ?></td>
-                                            <td><?= $chef['facebook'] ?></td>
-                                            <td><?= $chef['twitter'] ?></td>
-                                            <td><?= $chef['linked_in'] ?></td>
-                                            <td>
-                                                <a class="btn btn-success" href="<?= getpage("chefs/edit.php"); ?>?id=<?= $chef['id'] ?>">تعديل</a>
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/chefs/delete.php"); ?>?id=<?= $chef['id'] ?>">حذف</a>
+
+                                                <a class="btn btn-success" href="<?= getpage("users/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/users/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -102,12 +104,9 @@ $chefs = selectDesc($conn, "chefs", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>الاسم</th>
-                                        <th> اسم الصوره</th>
-                                        <th>الوظيفه</th>
-                                        <th>facebook</th>
-                                        <th>twitter</th>
-                                        <th>linked_in</th>
+                                        <th>الأسم</th>
+                                        <th>البريد الإلكتروني</th>
+                                        <th>هل هو مشرف</th>
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>

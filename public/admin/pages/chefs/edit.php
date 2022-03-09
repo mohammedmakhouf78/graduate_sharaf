@@ -61,7 +61,7 @@ if (isset($_GET['id'])) {
                     <div class="card-body">
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="quickForm" action="<?= getCntrollor("admin/chefs/update.php"); ?>" method="post">
+                        <form id="quickForm" action="<?= getCntrollor("admin/chefs/update.php"); ?>" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <input type="hidden" name="id" value="<?= $OldData['id'] ?>">
                                 <div class="card-body">
@@ -77,10 +77,10 @@ if (isset($_GET['id'])) {
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="lastname">الصوره</label>
-                                        <input type="file" name="imges" class="form-control" id="imges" value="<?= $OldData['image'] ?>">
-                                        <?php if (isset($_SESSION['errors']['imges'])) : ?>
-                                            <p class="text-danger"><?= $_SESSION['errors']['imgae'] ?></p>
+                                        <label for="image">الصور</label>
+                                        <input type="file" name="image" class="form-control" id="image" value="<?= $OldData['image'] ?>">
+                                        <?php if (isset($_SESSION['errors']['image'])) : ?>
+                                            <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
                                         <?php endif ?>
                                     </div>
 

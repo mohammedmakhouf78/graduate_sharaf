@@ -61,7 +61,7 @@ if (isset($_GET['id'])) {
                     <div class="card-body">
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="quickForm" action="<?= getCntrollor("admin/sliders/update.php"); ?>" method="post">
+                        <form id="quickForm" action="<?= getCntrollor("admin/sliders/update.php"); ?>" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <input type="hidden" name="id" value="<?= $OldData['id'] ?>">
                                 <div class="card-body">
@@ -89,7 +89,7 @@ if (isset($_GET['id'])) {
                                     <div class="form-group">
                                         <label for="description">الواصف</label>
                                         <br>
-                                        <textarea name="description" id="description" cols="128" rows="10" ><?= $OldData['description'] ?></textarea>
+                                        <textarea name="description" id="description" cols="128" rows="10"><?= $OldData['description'] ?></textarea>
                                         <?php if (isset($_SESSION['errors']['description'])) : ?>
                                             <p class="text-danger"><?= $_SESSION['errors']['description'] ?></p>
                                         <?php endif ?>

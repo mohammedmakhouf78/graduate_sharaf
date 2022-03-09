@@ -76,18 +76,20 @@ $sliders = selectDesc($conn, "sliders", "*");
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($sliders as $key => $user) : ?>
+                                    <?php foreach ($sliders as $key => $slider) : ?>
                                         <tr>
                                             <td><?= ++$key ?></td>
-                                            <td><?= $user['id'] ?></td>
-                                            <td><?= $user['image'] ?></td>
-                                            <td><?= $user['title'] ?></td>
-                                            <td><?= $user['description'] ?></td>
-                                            <td><?= $user['discount'] ?></td>
+                                            <td><?= $slider['id'] ?></td>
+                                            <td>
+                                                <img src="<?= getImage('sliders/' . $slider['image']) ?>" alt="" width="150">
+                                            </td>
+                                            <td><?= $slider['title'] ?></td>
+                                            <td><?= $slider['description'] ?></td>
+                                            <td><?= $slider['discount'] ?></td>
 
                                             <td>
-                                                <a class="btn btn-success" href="<?= getpage("sliders/edit.php"); ?>?id=<?= $user['id'] ?>">تعديل</a>
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/sliders/delete.php"); ?>?id=<?= $user['id'] ?>">حذف</a>
+                                                <a class="btn btn-success" href="<?= getpage("sliders/edit.php"); ?>?id=<?= $slider['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/sliders/delete.php"); ?>?id=<?= $slider['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>

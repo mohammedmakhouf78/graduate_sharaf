@@ -3,13 +3,25 @@
 include __DIR__ . "/../../../functions/function.php";
 
 
-if (isset($_POST['imges'])) {
+if (isset($_POST['title'])) {
 
-    $imges = $_POST['imges'];
-    imges($imges, "image", "error in image ", getpage("sliders/create.php"));
+
 
     $title = $_POST['title'];
-    validateMessage($title, "title", "error in title ", getpage("sliders/create.php"));
+    validateString($title, "title", "error in title ", getpage("sliders/create.php"));
+
+    $is_image = validateImage('imges', "error in image ", getpage("sliders/create.php"));
+
+
+    if ($is_image == true) {
+
+        $image = upoalImage('imges', 'sliders', 'sliders');
+        if ($image == false) {
+            addErrorsToSession('image', 'Error In Uploading The Image');
+            header("location:getpage('sliders/create.php')");
+        }
+    }
+
 
 
     $description = $_POST['description'];
@@ -20,7 +32,7 @@ if (isset($_POST['imges'])) {
 
 
     $data = array(
-        "image" => $imges,
+        "image" => $image,
         "title" => $title,
         "description" => $description,
         "discount" => $discount,
