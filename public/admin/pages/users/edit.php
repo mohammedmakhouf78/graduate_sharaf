@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
                     <div class="card-header">
                         <h3 class="card-title">تعديل المستخدم</h3>
                     </div>
-                     <!-- ليس لها اي فائده -->
+                    <!-- ليس لها اي فائده -->
                     <div>
                         <?php if (isset($_SESSION['successful']["db"])) :  ?>
 
@@ -80,7 +80,7 @@ if (isset($_GET['id'])) {
 
                                 <div class="form-group mb-0">
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1" value="1" <?= $OldData['is_admin'] == 1 ? 'checked' : '' ?>>
+                                        <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1" <?= $OldData['is_admin'] == 1 ? 'checked' : '' ?>>
                                         <label class="custom-control-label" for="is_admin">هل انت المشرف</label>
                                     </div>
                                 </div>

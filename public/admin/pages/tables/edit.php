@@ -3,7 +3,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $OldData = selectWhere($conn, 'users', '*', "id = $id")[0];
+    $OldData = selectWhere($conn, 'tables', '*', "id = $id")[0];
 }
 ?>
 
@@ -60,28 +60,22 @@ if (isset($_GET['id'])) {
                     <div class="card-body">
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="quickForm" action="<?= getCntrollor("admin/users/update.php"); ?>" method="post">
+                        <form id="quickForm" action="<?= getCntrollor("admin/tables/update.php"); ?>" method="post">
                             <div class="card-body">
                                 <input type="hidden" name="id" value="<?= $OldData['id'] ?>">
+
                                 <div class="form-group">
-                                    <label for="name">الأسم</label>
-                                    <input type="text" name="name" class="form-control" id="name" value="<?= $OldData['name'] ?>">
-                                    <?php if (isset($_SESSION['errors']['name'])) : ?>
-                                        <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
-                                    <?php endif ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">البريد الإلكتروني</label>
-                                    <input type="email" name="email" class="form-control" id="email" value="<?= $OldData['email'] ?>">
-                                    <?php if (isset($_SESSION['errors']['email'])) : ?>
-                                        <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
+                                    <label for="chairs"> عدد الكراسي</label>
+                                    <input type="text" name="chairs" class="form-control" id="chairs" value="<?= $OldData['chairs'] ?>">
+                                    <?php if (isset($_SESSION['errors']['chairs'])) : ?>
+                                        <p class="text-danger"><?= $_SESSION['errors']['chairs'] ?></p>
                                     <?php endif ?>
                                 </div>
 
                                 <div class="form-group mb-0">
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="is_admin" class="custom-control-input" id="is_admin" value="1" value="1" <?= $OldData['is_admin'] == 1 ? 'checked' : '' ?>>
-                                        <label class="custom-control-label" for="is_admin">هل انت المشرف</label>
+                                        <input type="checkbox" name="is_booked" class="custom-control-input" id="is_booked" value="1" <?= $OldData['is_booked'] == 1 ? 'checked' : '' ?>>
+                                        <label class="custom-control-label" for="is_booked">محجوزه</label>
                                     </div>
                                 </div>
                             </div>

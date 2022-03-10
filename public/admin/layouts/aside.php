@@ -333,10 +333,10 @@
 
         <li class="nav-item <?= (getUrl() ==  getpage("tables/index.php") || getUrl() ==  getpage("tables/create.php")) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link  <?= (getUrl() ==  getpage("tables/index.php") || getUrl() ==  getpage("tables/create.php")) ? 'active' : '' ?>">
-            <i class="nav-icon fas fa-comments"></i>
+            <i class="nav-icon fas fa-couch"></i>
 
             <p>
-              الطولات
+              الطاولات
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -344,13 +344,39 @@
             <li class="nav-item">
               <a href="<?= getpage("tables/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("tables/create.php") ? 'active' : '' ?>">
                 <i class="far fa-edit nav-icon"></i>
-                <p>إضافة بيانات الطولات</p>
+                <p>إضافة بيانات الطاولات</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= getpage("tables/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("tables/index.php") ? 'active' : '' ?>">
                 <i class="fas fa-users nav-icon"></i>
-                <p>إظهار بيانات الطولات</p>
+                <p>إظهار بيانات الطاولات</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item <?= (getUrl() ==  getpage("books/index.php") || getUrl() ==  getpage("books/create.php")) ? 'menu-open' : '' ?>">
+          <a href="#" class="nav-link  <?= (getUrl() ==  getpage("books/index.php") || getUrl() ==  getpage("books/create.php")) ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-scroll"></i>
+
+            <p>
+              <i class="right fas fa-angle-left"></i>
+              الحجز
+
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= getpage("books/create.php") ?>" class="nav-link <?= getUrl() ==  getpage("books/create.php") ? 'active' : '' ?>">
+                <i class="far fa-edit nav-icon"></i>
+                <p>إضافة بيانات الحجز</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= getpage("books/index.php") ?>" class="nav-link <?= getUrl() ==  getpage("books/index.php") ? 'active' : '' ?>">
+                <i class="fas fa-users nav-icon"></i>
+                <p>إظهار بيانات الحجز</p>
               </a>
             </li>
           </ul>
