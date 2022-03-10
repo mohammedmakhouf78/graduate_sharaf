@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
                     <div class="card-header">
                         <h3 class="card-title">تعديل الأخبار</h3>
                     </div>
-                      <!-- ليس لها اي فائده -->
+                    <!-- ليس لها اي فائده -->
                     <div>
                         <?php if (isset($_SESSION['successful']["db"])) :  ?>
 
@@ -72,28 +72,28 @@ if (isset($_GET['id'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">التلفون</label>
-                                    <input type="text" name="phone" class="form-control" id="phone" value="<?= $OldData['phone'] ?>">
+                                    <input type="text" name="phone" class="form-control" id="phone">
                                     <?php if (isset($_SESSION['errors']['phone'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['phone'] ?></p>
                                     <?php endif ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">البريد الالكتروني</label>
-                                    <input type="email" name="email" class="form-control" id="email" value="<?= $OldData['email'] ?>">
+                                    <input type="email" name="email" class="form-control" id="email">
                                     <?php if (isset($_SESSION['errors']['email'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
                                     <?php endif ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="open">الفتح</label>
-                                    <input type="time" id="open" class="form-control" value="<?= $OldData['open'] ?>" name="open">
+                                    <input type="time" id="open" class="form-control" name="open">
                                     <?php if (isset($_SESSION['errors']['open'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['open'] ?></p>
                                     <?php endif ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="close">الاغلاق</label>
-                                    <input type="time" id="close" class="form-control"  value="<?= $OldData['close'] ?>" name="close">
+                                    <input type="time" id="close" class="form-control" value="<?= $OldData['close'] ?>" name="close">
                                     <?php if (isset($_SESSION['errors']['close'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['close'] ?></p>
                                     <?php endif ?>

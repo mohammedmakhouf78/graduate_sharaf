@@ -61,18 +61,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
                 <div class="form-group">
-                  <label for="chairs"> الكراسي</label>
+                  <label for="chairs"> عدد الكراسي</label>
                   <input type="text" name="chairs" class="form-control" id="chairs">
                   <?php if (isset($_SESSION['errors']['chairs'])) : ?>
                     <p class="text-danger"><?= $_SESSION['errors']['chairs'] ?></p>
-                  <?php endif ?>
-                </div>
-
-                <div class="form-group">
-                  <label for="is_booked">الحجز</label>
-                  <input type="is_booked" name="is_booked" class="form-control" id="is_booked">
-                  <?php if (isset($_SESSION['errors']['is_booked'])) : ?>
-                    <p class="text-danger"><?= $_SESSION['errors']['is_booked'] ?></p>
                   <?php endif ?>
                 </div>
 
@@ -80,9 +72,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
                 <div class="form-group mb-0">
                   <div class="custom-control custom-checkbox">
-
-
-                    <label class="custom-control-label" for="is_admin">هل انت المشرف</label>
+                    <input type="checkbox" name="is_booked" class="custom-control-input" id="is_booked" value="1">
+                    <label class="custom-control-label" for="is_booked">محجوزه</label>
                   </div>
                 </div>
               </div>

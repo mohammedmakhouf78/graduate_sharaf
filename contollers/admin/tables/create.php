@@ -3,38 +3,30 @@
 include __DIR__ . "/../../../functions/function.php";
 
 
-if (isset($_POST['name'])) {
+if (isset($_POST['chairs'])) {
 
-    $name = $_POST['name'];
-    validateString($name, "name", "error in name ", getpage("users/create.php"));
-
-    $email = $_POST['email'];
-    validateEmail($email, "email", "error in email ", getpage("users/create.php"));
-
-    $password = $_POST['password'];
-    validatePassword($password, "password", getpage("users/create.php"));
+    $chairs = $_POST['chairs'];
+    validateEmpty($chairs, "chairs", "error in chairs ", getpage("tables/create.php"));
 
 
-    $is_admin = $_POST['is_admin'] ?? 0;
+    $is_booked = $_POST['is_booked'] ?? 0;
 
 
     $data = array(
-        "name" => $name,
-        "email" => $email,
-        "password" => password_hash($password, PASSWORD_DEFAULT),
-        "is_admin" => $is_admin,
+        "chairs" => $chairs,
+        "is_booked" => $is_booked,
     );
 
-    $result = insert($conn, "users", $data);
+    $result = insert($conn, "tables", $data);
 
     if ($result) {
-        addSuccessToSession("db", "Users Inserted Successfully");
+        addSuccessToSession("db", "tables Inserted Successfully");
     } else {
-        addErrorsToSession("db", "there was an error sorry ");
+        addErrorsToSession("db", "tables was an error sorry ");
     }
 
-    redirect(getpage("users/create.php"));
+    redirect(getpage("tables/create.php"));
 } else {
 
-    redirect(getpage("users/create.php"));
+    redirect(getpage("tables/create.php"));
 }

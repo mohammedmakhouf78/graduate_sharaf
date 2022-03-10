@@ -5,8 +5,9 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
 
 
-//$users = select($conn, "users", "*");
-$tables = selectDesc($conn, "tables", "*");
+//$categories = select($conn, "categories", "*");
+$books = query($conn, 'SELECT books.id,books.time,books.people_number,books.date,users.name from books join users on users.id = books.user_id');
+
 
 
 
@@ -46,7 +47,7 @@ $tables = selectDesc($conn, "tables", "*");
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">بيانات الطاولات</h3>
+                            <h3 class="card-title">بيانات المستخدمين</h3>
                         </div>
 
 
@@ -69,31 +70,34 @@ $tables = selectDesc($conn, "tables", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>الكرسي</th>
-                                        <th>هل محجوزه</th>
+                                        <th>التاريخ</th>
+                                        <th> رقم الشخص </th>
+                                        <th>الوقت </th>
+                                        <th> رقم المستخدم </th>
+
                                         <th>التحكم</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($tables as $key => $table) : ?>
+                                    <?php foreach ($books as $key => $book) : ?>
                                         <tr>
                                             <td><?= ++$key ?></td>
-                                            <td><?= $table['id'] ?></td>
-                                            <td><?= $table['chairs'] ?></td>
+                                            <td><?= $book['id'] ?></td>
+                                            <td><?= $book['people_number'] ?></td>
+                                            <td><?= $book['time'] ?></td>
+                                            <td><?= $book['date'] ?></td>
+                                            <td><?= $book['name'] ?></td>
 
 
 
-                                            <?php if ($table['is_booked'] == 1) : ?>
-                                                <td class="text-primary">محجوزه</td>
-                                            <?php else : ?>
-                                                <td class="text-danger">تحت الطلب</td>
-                                            <?php endif; ?>
+
+
 
                                             <td>
 
-                                                <a class="btn btn-success" href="<?= getpage("tables/edit.php"); ?>?id=<?= $table['id'] ?>">تعديل</a>
-                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/tables/delete.php"); ?>?id=<?= $table['id'] ?>">حذف</a>
+                                                <a class="btn btn-success" href="<?= getpage("books/edit.php"); ?>?id=<?= $book['id'] ?>">تعديل</a>
+                                                <a class="btn btn-danger" href="<?= getCntrollor("admin/books/delete.php"); ?>?id=<?= $book['id'] ?>">حذف</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;    ?>
@@ -103,8 +107,11 @@ $tables = selectDesc($conn, "tables", "*");
                                     <tr>
                                         <th>التسلسل</th>
                                         <th>الرقم</th>
-                                        <th>الكرسي</th>
-                                        <th>هل محجوزه</th>
+                                        <th>التاريخ</th>
+                                        <th> رقم الشخص </th>
+                                        <th>الوقت </th>
+                                        <th> رقم المستخدم </th>
+
                                         <th>التحكم</th>
                                     </tr>
                                 </tfoot>

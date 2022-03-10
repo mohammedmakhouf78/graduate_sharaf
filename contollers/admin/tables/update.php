@@ -3,28 +3,25 @@
 include __DIR__ . "/../../../functions/function.php";
 
 
-if (isset($_POST['name'])) {
+if (isset($_POST['chairs'])) {
 
     $id = $_POST['id'];
 
-    $name = $_POST['name'];
-    validateString($name, "name", "error in name ", getpage("users/index.php"));
-
-    $email = $_POST['email'];
-    validateEmail($email, "email", "error in email ", getpage("users/index.php"));
+    $chairs = $_POST['chairs'];
+    validateEmpty($chairs, "chairs", "error in chairs ", getpage("tables/create.php"));
 
 
-    $is_admin = $_POST['is_admin'] ?? 0;
+    $is_booked = $_POST['is_booked'] ?? 0;
 
 
     $data = array(
-        "name" => $name,
-        "email" => $email,
-        "is_admin" => $is_admin,
+        "chairs" => $chairs,
+        "is_booked" => $is_booked,
     );
 
 
-    $result =  updata($conn, "users", $data, $id);
+    $result =  updata($conn, "tables", $data, $id);
+
 
 
     if ($result) {
@@ -33,8 +30,8 @@ if (isset($_POST['name'])) {
         addErrorsToSession("db", "خطأ في التعديل ");
     }
 
-    redirect(getpage("users/index.php"));
+    redirect(getpage("tables/index.php"));
 } else {
 
-    redirect(getpage("users/index.php"));
+    redirect(getpage("tables/index.php"));
 }
