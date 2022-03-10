@@ -1,3 +1,21 @@
+<?php
+
+
+
+
+if(!isset($_SESSION["admin"])){
+
+header("location:" .getpageAdmin("puth/login.php"));
+}
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

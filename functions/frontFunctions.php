@@ -26,6 +26,13 @@ function layouts($path)
     return ROOT . "/public/admin/layouts/$path";
 }
 
+function frontLayout($path)
+{
+
+    return ROOT . "/public/site/layouts/$path";
+}
+
+
 function getUrl()
 {
     return $_SERVER['REQUEST_URI'];
