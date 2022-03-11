@@ -13,6 +13,13 @@ function getpage($path)
     return "/public/admin/pages/$path";
 }
 
+function getpageAdmin($path)
+{
+
+    return "/public/admin/$path";
+}
+
+
 function dd($data)
 {
     var_dump($data);
