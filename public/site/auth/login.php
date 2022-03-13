@@ -1,3 +1,9 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php"; ?>
+
+<?php include(frontLayout("head.php")); ?>
+
+
+<!-- start Header -->
 <?php
 
 $about = query($conn, "select about.phone,about.email,about.open,about.close from about")[0];
@@ -84,40 +90,10 @@ $about = query($conn, "select about.phone,about.email,about.open,about.close fro
                         <a class="nav-link" href="<?= getPageSite('index.php') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#offer">Offer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-
-
-
-                    <li class="nav-item">
                         <a class="nav-link" href="<?= getController('site/registeruser.php') ?>">انشاء حساب</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= getPageSite('auth/login.php') ?>">تسجيل دخول</a>
-                    </li>
-
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= getController('site/logout.php') ?>">تسجيل الخروج</a>
                     </li>
 
                 </ul>
@@ -125,3 +101,85 @@ $about = query($conn, "select about.phone,about.email,about.open,about.close fro
         </div>
     </nav>
 </header>
+<!-- End Header  -->
+
+
+<div id="home" class="main-banner item-bg-one">
+    <div class=" d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="main-banner-content">
+
+
+                    <div class="container">
+
+                        <div class="col-lg-11 col-md-11">
+                            <div class="contact-box" style="margin-left:180px;">
+
+
+                                <div class="col-lg-10 col-md-10">
+
+                                    <form style="background-color: white;padding:55px 26px 55px 26px;box-shadow: 7px 5px 30px rgb(234 58 8 / 20%);border-radius: 5px;" action="<?= getController('site/login.php') ?>" method="POST">
+
+                                        <div class="row">
+
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="email" name="email" class="form-control" placeholder="email" />
+                                                    <?php if (isset($_SESSION['errors']['email'])) : ?>
+                                                        <p class="text-danger"><?= $_SESSION['errors']['email'] ?></p>
+                                                    <?php endif ?>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="password" name="password" class="form-control" placeholder="password" />
+                                                    <?php if (isset($_SESSION['errors']['password'])) : ?>
+                                                        <p class="text-danger"><?= $_SESSION['errors']['password'] ?></p>
+                                                    <?php endif ?>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-12 col-md-12">
+                                                <button type="submit" class="btn btn-primary">
+                                                    تسجيل دخول
+                                                </button>
+
+                                                <?php if (isset($_SESSION['errors']["login"])) :  ?>
+
+                                                    <p style="color: red;"><?= $_SESSION['errors']['login'] ?></p>
+
+                                                <?php endif; ?>
+
+
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="down_arrow">
+            <a href="#about" class="scroll_down"></a>
+        </div>
+    </div>
+
+</div>
+<canvas id="canvas"></canvas>
+
+</section>
+
+
+
+
+
+<?php include(frontLayout("footer.php")); ?>

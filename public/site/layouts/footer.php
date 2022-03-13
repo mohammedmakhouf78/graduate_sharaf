@@ -1,3 +1,6 @@
+ <?php $_SESSION['errors'] = []; ?>
+ <?php $_SESSION['successful'] = []; ?>
+
  <!-- Start Footer Area  -->
  <footer class="footer-area">
    <div class="container">

@@ -27,6 +27,13 @@ function dd($data)
 }
 
 
+
+function getController($path)
+{
+    return "../../../contollers/$path";
+}
+
+
 function getPageSite($path)
 {
     return "/public/site/$path";

@@ -34,52 +34,52 @@ include $_SERVER['DOCUMENT_ROOT'] . "/functions/function.php";
             <div class="card-body">
                 <?php if (isset($_SESSION['errors']["login"])) :  ?>
 
-                    <div class='alert alert-danger'><?= $_SESSION['errors']['login']?>
-                    <div>
+                    <div class='alert alert-danger'><?= $_SESSION['errors']['login'] ?>
+                        <div>
 
-                <?php endif; ?>
+                        <?php endif; ?>
 
 
 
-                <form action="<?= getCntrollor("admin/auth/login.php"); ?>" method="post">
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email" name="email">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                        <form action="<?= getCntrollor("admin/auth/login.php"); ?>" method="post">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Email" name="email">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-envelope"></span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" placeholder="Password" name="password">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                        </form>
+
                         </div>
+                        <!-- /.card-body -->
                     </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                </form>
-                
+                    <!-- /.card -->
             </div>
-            <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-    </div>
-    <!-- /.login-box -->
-    <?php $_SESSION['errors'] = []; ?>
+            <!-- /.login-box -->
+            <?php $_SESSION['errors'] = []; ?>
 
-    <!-- jQuery -->
-    <script src=" <?= asset('adminLTE/plugins/jquery/jquery.min.js') ?>"></script>
-    <!-- Bootstrap 4 -->
-    <script src=" <?= asset('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-    <!-- AdminLTE App -->
-    <script src=" <?= asset('adminLTE/dist/js/adminlte.min.js') ?>"></script>
+            <!-- jQuery -->
+            <script src=" <?= asset('adminLTE/plugins/jquery/jquery.min.js') ?>"></script>
+            <!-- Bootstrap 4 -->
+            <script src=" <?= asset('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+            <!-- AdminLTE App -->
+            <script src=" <?= asset('adminLTE/dist/js/adminlte.min.js') ?>"></script>
 </body>
 
 </html>
