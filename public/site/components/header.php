@@ -105,6 +105,11 @@ $about = query($conn, "select about.phone,about.email,about.open,about.close fro
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
 
+                    <?php if(isset($_SESSION['admin'])): ?> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= getpageAdmin('index.php') ?>">لوحة التحكم</a>
+                        </li>
+                    <?php endif; ?> 
 
                     <?php if(!isset($_SESSION['user'])): ?>                   
                     <li class="nav-item">

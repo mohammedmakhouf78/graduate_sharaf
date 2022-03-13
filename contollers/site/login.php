@@ -10,12 +10,22 @@ if (isset($_POST['email'])) {
 
     foreach ($users as $user) {
         if ($user["email"] == $email && password_verify($password, $user["password"])) {
-
-            $_SESSION["user"] = [
-                'id' => $user['id'],
-                "user" => $user["name"],
-                "email" => $user["email"],
-            ];
+            if($user['is_admin'] == true)
+            {
+                $_SESSION["admin"] = [
+                    'id' => $user['id'],
+                    "user" => $user["name"],
+                    "email" => $user["email"],
+                ];
+            }
+            else
+            {
+                $_SESSION["user"] = [
+                    'id' => $user['id'],
+                    "user" => $user["name"],
+                    "email" => $user["email"],
+                ];
+            }
 
             redirect(getPageSite('index.php'));
         } else {
