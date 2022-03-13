@@ -32,6 +32,12 @@ function frontLayout($path)
     return ROOT . "/public/site/layouts/$path";
 }
 
+function frontcomponents($path)
+{
+
+    return ROOT . "/public/site/components/$path";
+}
+
 
 function getUrl()
 {
@@ -56,4 +62,3 @@ function getImageRoot(string $path)
 {
     return ROOT . "/public/images/$path";
 }
-

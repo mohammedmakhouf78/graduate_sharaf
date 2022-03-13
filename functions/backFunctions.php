@@ -27,6 +27,18 @@ function dd($data)
 }
 
 
+
+function getController($path)
+{
+    return "../../../contollers/$path";
+}
+
+
+function getPageSite($path)
+{
+    return "/public/site/$path";
+}
+
 function upoalImage($fiekd, $dir, $name)
 {
 
@@ -43,12 +55,11 @@ function upoalImage($fiekd, $dir, $name)
     }
 }
 
-function deletImage( $dir, $oldImage)
+function deletImage($dir, $oldImage)
 {
-  
-        $oldImage = getImageRoot("$dir/$oldImage");
-        if (file_exists($oldImage)) {
-            unlink($oldImage);
-        }
 
+    $oldImage = getImageRoot("$dir/$oldImage");
+    if (file_exists($oldImage)) {
+        unlink($oldImage);
+    }
 }

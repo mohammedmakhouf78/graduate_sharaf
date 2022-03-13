@@ -58,7 +58,7 @@ $users = selectDesc($conn, "users", "*");
 
                             <?php elseif (isset($_SESSION['errors']["db"])) : ?>
 
-                                <div class='alert alert-danger'><?= $_SESSION['error']['db'] ?></div>
+                                <div class='alert alert-danger'><?= $_SESSION['errors']['db'] ?></div>
 
                             <?php endif; ?>
 
@@ -79,7 +79,7 @@ $users = selectDesc($conn, "users", "*");
 
                                     <?php foreach ($users as $key => $user) : ?>
                                         <tr>
-                                            <td><?=  ++$key ?></td>
+                                            <td><?= ++$key ?></td>
                                             <td><?= $user['id'] ?></td>
                                             <td><?= $user['name'] ?></td>
 
