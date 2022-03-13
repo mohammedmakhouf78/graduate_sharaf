@@ -55,12 +55,12 @@ $gallarys = query($conn, "select gallary.image,gallary.title from gallary limit 
                         <h2>Welcome to Resturant</h2>
                     </div>
                     <p>
-                        <?= $gallary['title'] ?>
+                        <?= $gallarys[0]['title'] ?>
                     </p>
                     <div class="story-quote">
                         <div class="quote-content">
                             <p>
-                                <?= $gallary['title'] ?>
+                                <?= $gallarys[0]['title'] ?>
                             </p>
 
                         </div>

@@ -149,29 +149,7 @@ function validatePassword($data, $name, $path)
 {
 
     if (!empty($data)) {
-        $password = test_input($data);
-
-        if (strlen($data) <= '8') {
-            $passwordErr = "Your Password Must Contain At Least 8 Characters!";
-            addErrorsToSession($name, $passwordErr);
-            header("location:$path");
-            exit;
-        } elseif (!preg_match("#[0-9]+#", $password)) {
-            $passwordErr = "Your Password Must Contain At Least 1 Number!";
-            addErrorsToSession($name, $passwordErr);
-            header("location:$path");
-            exit;
-        } elseif (!preg_match("#[A-Z]+#", $password)) {
-            $passwordErr = "Your Password Must Contain At Least 1 Capital Letter!";
-            addErrorsToSession($name, $passwordErr);
-            header("location:$path");
-            exit;
-        } elseif (!preg_match("#[a-z]+#", $password)) {
-            $passwordErr = "Your Password Must Contain At Least 1 Lowercase Letter!";
-            addErrorsToSession($name, $passwordErr);
-            header("location:$path");
-            exit;
-        }
+        return true;
     } else {
         $passwordErr = "Please enter password   ";
         addErrorsToSession($name, $passwordErr);

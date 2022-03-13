@@ -39,35 +39,35 @@
                 </div>
             </div>
             <div class="col-lg-12 col-md-12">
-                <form id="contactForm">
+                <form method="POST" class="mt-4" action="<?= getController('site/msgController.php') ?>">
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="First name" required data-error="Please enter your first name" />
+                                <input type="text" class="form-control" placeholder="First name" required data-error="Please enter your first name" name="first_name" />
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last name" required data-error="Please enter your last name" />
+                                <input type="text" class="form-control" placeholder="Last name" required data-error="Please enter your last name" name="last_name" />
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Your email" required data-error="Please enter your email" />
+                                <input type="email" class="form-control" placeholder="Your email" required data-error="Please enter your email" name="email" />
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your phone" required data-error="Please enter your number" />
+                                <input type="text" class="form-control" placeholder="Your phone" required data-error="Please enter your number" name="phone" />
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">
                             <div class="form-group">
-                                <textarea name="message" cols="30" rows="5" class="form-control" placeholder="Your message..." required data-error="Write your message"></textarea>
+                                <textarea name="message" cols="30" rows="5" class="form-control" placeholder="Your message..." required data-error="Write your message" name="message"></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>

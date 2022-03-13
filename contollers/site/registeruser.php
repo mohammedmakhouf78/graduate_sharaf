@@ -27,7 +27,7 @@ if (isset($_POST['name'])) {
 
     $result = insert($conn, "users", $data);
 
-    redirect(getPageSite("auth/registeruser.php"));
+    redirect(getPageSite("index.php"));
 } else {
 
     redirect(getPageSite("auth/registeruser.php"));

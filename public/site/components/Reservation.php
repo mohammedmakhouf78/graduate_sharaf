@@ -1,3 +1,6 @@
+<?php
+ $tables = select($conn,"tables",'*');
+?>
 <section class="reservation-area ptb-100" style=" background-image: url(<?= getImage("img/reservation-bg.jpg") ?>);">
     <div class="container">
         <h2>Book A table Now !</h2>
@@ -15,41 +18,29 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="modalForm">
+                <form class="modalForm" method="POST" action="<?= getController('site/bookController.php'); ?>">
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name" />
+                                <input type="text" class="form-control" placeholder="Number" name="people_number" />
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" />
+                                <input type="date" class="form-control" name="date" />
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Number" />
+                                <input type="time" class="form-control" name="time" />
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="01/02/2021" />
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Time" />
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="form-group">
-                                <select class="form-control">
-                                    <option>1 Person</option>
-                                    <option>2 Person</option>
-                                    <option>3 Person</option>
-                                    <option>4 Person</option>
-                                    <option>5 Person</option>
+                                <select class="form-control" name="table_id">
+                                    <?php foreach($tables as $table): ?>
+                                    <option value="<?= $table['id'] ?>"> طاولة رقم : <?= $table['id']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>

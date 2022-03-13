@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "sharaf_project");
+$conn = mysqli_connect("localhost", "mohammed", "", "sharaf_project",3309);
 
 function insert($conn, $table, $data)
 {

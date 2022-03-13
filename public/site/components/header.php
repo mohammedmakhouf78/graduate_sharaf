@@ -106,20 +106,18 @@ $about = query($conn, "select about.phone,about.email,about.open,about.close fro
                     </li>
 
 
-
+                    <?php if(!isset($_SESSION['user'])): ?>                   
                     <li class="nav-item">
                         <a class="nav-link" href="<?= getController('site/registeruser.php') ?>">انشاء حساب</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= getPageSite('auth/login.php') ?>">تسجيل دخول</a>
                     </li>
-
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= getController('site/logout.php') ?>">تسجيل الخروج</a>
-                    </li>
-
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= getController('site/logout.php') ?>">تسجيل الخروج</a>
+                        </li>
+                    <?php endif; ?>
 
                 </ul>
             </div>

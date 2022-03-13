@@ -6,28 +6,15 @@ if (isset($_POST['email'])) {
 
     $password = $_POST['password'];
 
-
-
     $users = select($conn, "users", "*");
-
-    $user = selectWhere($conn, "users", "*", "id = 83")[0];
-
-
-
-
-
-
-
-
 
     foreach ($users as $user) {
         if ($user["email"] == $email && password_verify($password, $user["password"])) {
 
-            $_SESSION["admin"] = [
+            $_SESSION["user"] = [
+                'id' => $user['id'],
                 "user" => $user["name"],
                 "email" => $user["email"],
-
-
             ];
 
             redirect(getPageSite('index.php'));
