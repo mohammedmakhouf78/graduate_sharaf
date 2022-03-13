@@ -120,6 +120,7 @@ $about = query($conn, "select about.phone,about.email,about.open,about.close fro
                         <a class="nav-link" href="<?= getController('site/logout.php') ?>">تسجيل الخروج</a>
                     </li>
 
+
                 </ul>
             </div>
         </div>
