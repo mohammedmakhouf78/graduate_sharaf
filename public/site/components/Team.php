@@ -23,7 +23,7 @@ $chefs = query($conn, "select * from chefs limit 3");
 
                         <div class="single-team">
                             <div class="team-image">
-                                <img src="<?= getImage('chef/' . $chef['image']) ?>" alt="chef-img" />
+                                <img style="width:352px;height:450px;object-fit:cover" src="<?= getImage('chef/' . $chef['image']) ?>" alt="chef-img" />
                                 <ul class="team-member-social">
                                     <li>
                                         <a href="<?= $chef['facebook'] ?>"><i class="icofont-facebook"></i></a>

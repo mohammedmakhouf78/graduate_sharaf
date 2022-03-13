@@ -29,7 +29,7 @@ $categories = query($conn, "select * from categories limit 4");
 
                     <div class="col-lg-12 col-md-12">
                         <div class="single-offer">
-                            <a href="#"><img src="<?= getImage('categories/' . $categorie['image']) ?>" alt="offer-img" /></a>
+                            <a href="#"><img style="width:543px;height:365px;object-fit: cover;" src="<?= getImage('categories/' . $categorie['image']) ?>" alt="offer-img" /></a>
                             <div class="offer-content">
                                 <h3>
                                     <span>50% off</span> <?= $categorie['name'] ?>

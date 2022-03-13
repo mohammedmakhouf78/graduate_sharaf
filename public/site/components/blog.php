@@ -21,7 +21,8 @@ $news = query($conn, "select * from news limit 4");
                 <?php foreach ($news as $new) : ?>
                     <div class="col-lg-12 col-md-12">
                         <div class="single-blog-post">
-                            <a href="#" class="post-image"><img src="<?= getImage('news/' . $new['image']) ?>" alt="blog-image" /></a>
+                            <a href="#" class="post-image">
+                                <img style="width:352px;height:242px;" src="<?= getImage('news/' . $new['image']) ?>" alt="blog-image" /></a>
                             <div class="blog-post-content">
                                 <ul>
                                     <li>

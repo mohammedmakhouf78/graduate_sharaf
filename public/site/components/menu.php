@@ -33,22 +33,23 @@ $sliders = query($conn, "select * from sliders limit 6");
 
                                 <?php foreach ($sliders as $slider) : ?>
 
-
-
                                     <div class="col-lg-6 col-md-12">
                                         <div class="single-menu">
                                             <div class="food-menu-img">
-                                                <img src="<?= getImage('sliders/' . $slider['image']) ?>" alt="food-img" />
+                                                <img style="width:90px;height:90px;object-fit: cover;" src="<?= getImage('sliders/' . $slider['image']) ?>" alt="food-img" />
                                             </div>
                                             <div class="food-menu-content">
-                                                <h3>
+                                                <h3 class="mb-2">
                                                     Cupcake Recipes
                                                     <span class="menu-price"><?= $slider['discount'] ?></span>
                                                 </h3>
                                                 <ul>
                                                     <li><?= $slider['description'] ?></li>
                                                     <li><?= $slider['title'] ?></li>
-
+                                                    <li><?= $slider['description'] ?></li>
+                                                    <li><?= $slider['title'] ?></li>
+                                                    <li><?= $slider['description'] ?></li>
+                                                    <li><?= $slider['title'] ?></li>
                                                 </ul>
                                             </div>
                                         </div>

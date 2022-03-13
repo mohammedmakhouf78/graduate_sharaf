@@ -26,18 +26,6 @@
                     <p class="opening-hours">Friday <span>Closed</span></p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-                <div class="contact-box">
-                    <h3>Newsletter</h3>
-                    <form class="newsletter-form" data-bs-toggle="validator">
-                        <input type="text" class="form-control" placeholder="Your email.." name="EMAIL" required autocomplete="off" />
-                        <button type="submit" class="btn btn-primary">
-                            <i class="icofont-paper-plane"></i>
-                        </button>
-                        <div id="validator-newsletter" class="form-result"></div>
-                    </form>
-                </div>
-            </div>
             <div class="col-lg-12 col-md-12">
                 <form method="POST" class="mt-4" action="<?= getController('site/msgController.php') ?>">
                     <div class="row">
