@@ -1,7 +1,7 @@
 <?php
 
 
-$gallarys = query($conn, "select gallary.image,gallary.title from gallary limit 4");
+$gallarys = query($conn, "select gallary.image,gallary.title from gallary");
 
 
 
@@ -11,8 +11,8 @@ $gallarys = query($conn, "select gallary.image,gallary.title from gallary limit 
 
     <div class="container">
         <div class="section-title">
-            <span>Restaurant Gallery</span>
-            <h2>See Our Gallery</h2>
+            <span>معرض صور المطعم</span>
+            <h2>انظر معرضنا</h2>
         </div>
     </div>
 
@@ -24,7 +24,7 @@ $gallarys = query($conn, "select gallary.image,gallary.title from gallary limit 
                     <img style="width: 315ps;height:256px;object-fit:cover" src="<?= getImage('gallary/' . $gallary['image']) ?>" alt="gallery-img" />
                     <a href="<?= getImage('gallary/' . $gallary['image']) ?>" class="popup-btn"><i class="icofont-search-restaurant"></i></a>
                     <div class="image-content">
-                        <h3><a href="#">Beefsteak</a></h3>
+                        <h3><a href="#">شريحة لحم البقر</a></h3>
                     </div>
                 </div>
 

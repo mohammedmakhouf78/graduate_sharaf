@@ -1,7 +1,7 @@
 <?php
 
 
-$categories = query($conn, "select * from categories limit 4");
+$categories = query($conn, "select * from categories");
 
 
 
@@ -11,8 +11,8 @@ $categories = query($conn, "select * from categories limit 4");
 <section id="offer" class="offer-area ptb-100" style=" background-image: url(<?= getImage("img/offer-bg.jpg") ?>);">
     <div class="container">
         <div class="section-title">
-            <span>Amazing Delicious</span>
-            <h2>This Week Special</h2>
+            <span>مدهش لذيذ</span>
+            <h2>هذا الأسبوع خاص</h2>
         </div>
         <div class="row">
 
@@ -29,7 +29,7 @@ $categories = query($conn, "select * from categories limit 4");
 
                     <div class="col-lg-12 col-md-12">
                         <div class="single-offer">
-                            <a href="#"><img style="width:543px;height:365px;object-fit: cover;" src="<?= getImage('categories/' . $categorie['image']) ?>" alt="offer-img" /></a>
+                            <a href="#"><img style="width:543px;height:365px;object-fit: cover;" src="<?= getImage('categories/'.$categorie['image']) ?>" alt="offer-img" /></a>
                             <div class="offer-content">
                                 <h3>
                                     <span>50% off</span> <?= $categorie['name'] ?>

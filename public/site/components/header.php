@@ -81,28 +81,28 @@ $about = query($conn, "select about.phone,about.email,about.open,about.close fro
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= getPageSite('index.php') ?>">Home</a>
+                        <a class="nav-link" href="<?= getPageSite('index.php') ?>">الصفحة الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#about">حول</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#offer">Offer</a>
+                        <a class="nav-link" href="#offer">عرض</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
+                        <a class="nav-link" href="#menu">قائمة</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
+                        <a class="nav-link" href="#team">فريق</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
+                        <a class="nav-link" href="#gallery">صالة عرض</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#blog">Blog</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact">اتصل</a>
                     </li>
 
                     <?php if(isset($_SESSION['admin'])): ?> 

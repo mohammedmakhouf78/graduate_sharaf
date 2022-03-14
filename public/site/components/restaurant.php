@@ -1,8 +1,8 @@
 <section class="restaurant-cta ptb-100" style=" background-image: url(<?= getImage("img/cta-bg.jpg") ?>);">
     <div class="container">
-        <span>Prepare The Best Dishes</span>
-        <h2>Our Restaurant and the food they serve their guests</h2>
-        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Now</a>
+        <span>تحضير أفضل الأطباق</span>
+        <h2>مطعمنا والطعام الذي يخدمونه لضيوفهم</h2>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservationModal">احجز الآن</a>
     </div>
 </section>
 
@@ -10,8 +10,8 @@
 <section class="partner-area ptb-100">
     <div class="container">
         <div class="section-title">
-            <span>Client</span>
-            <h2>Our Partner</h2>
+            <span>عميل</span>
+            <h2>شريكنا</h2>
         </div>
         <div class="row">
             <div class="partner-slides owl-carousel owl-theme">

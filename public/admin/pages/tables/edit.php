@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
                 <!-- jquery validation -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">تعديل المستخدم</h3>
+                        <h3 class="card-title">تعديل حجز الكراسي/h3>
                     </div>
                     <!-- ليس لها اي فائده -->
                     <div>

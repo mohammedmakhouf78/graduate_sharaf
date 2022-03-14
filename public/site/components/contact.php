@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="contact-box">
-                    <h3>Contact Us</h3>
+                    <h3>اتصل بنا</h3>
                     <p>
-                        <a href="#"><i class="icofont-google-map"></i>13 El Horreya Street,
-                            Alexandria, Egypt</a>
+                        <a href="#"><i class="icofont-google-map"></i>13 شارع الحرية,
+                        الإسكندرية, مصر</a>
                     </p>
                     <p>
-                        <a href="#"><i class="icofont-phone"></i> +20 114 589 632</a>
+                        <a href="#"><i class="icofont-phone"></i> +20 2011 5643</a>
                     </p>
                     <p>
                         <a href="#"><i class="icofont-envelope"></i>
@@ -19,11 +19,11 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="contact-box">
-                    <h3>Opening Hours</h3>
+                    <h3>ساعات العمل</h3>
                     <p class="opening-hours">
                         Satu - Thur <span>8:00am - 11:30pm</span>
                     </p>
-                    <p class="opening-hours">Friday <span>Closed</span></p>
+                    <p class="opening-hours">يوم الجمعة <span>مغلق</span></p>
                 </div>
             </div>
             <div class="col-lg-12 col-md-12">

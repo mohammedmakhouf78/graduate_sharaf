@@ -6,7 +6,7 @@ if (isset($_POST['name'])) {
 
 
     $name = $_POST['name'];
-    validateString($name, "name", "error in name ", getpage("chefs/create.php"));
+    validateEmpty($name, "name", "error in name ", getpage("chefs/create.php"));
 
     $is_image = validateImage('image', "error in image ", getpage("chefs/create.php"));
     if ($is_image == true) {
@@ -21,16 +21,16 @@ if (isset($_POST['name'])) {
     }
 
     $job = $_POST['job'];
-    validateString($job, "job", "error in job ", getpage("chefs/create.php"));
+    validateEmpty($job, "job", "error in job ", getpage("chefs/create.php"));
 
     $facebook = $_POST['facebook'];
-    lunk($facebook, "facebook", "error in facebook ", getpage("chefs/create.php"));
+   // lunk($facebook, "facebook", "error in facebook ", getpage("chefs/create.php"));
 
     $twitter = $_POST['twitter'];
-    lunk($twitter, "twitter", "error in twitter ", getpage("chefs/create.php"));
+  //  lunk($twitter, "twitter", "error in twitter ", getpage("chefs/create.php"));
 
     $linked_in = $_POST['linked_in'];
-    lunk($linked_in, "linked_in", "error in linked_in ", getpage("chefs/create.php"));
+  //  lunk($linked_in, "linked_in", "error in linked_in ", getpage("chefs/create.php"));
 
 
 

@@ -9,8 +9,8 @@ $news = query($conn, "select * from news limit 4");
 <section id="blog" class="blog-area ptb-100">
     <div class="container">
         <div class="section-title">
-            <span>From Our Blog</span>
-            <h2>Latest News</h2>
+            <span>من مدونتنا</span>
+            <h2>أحدث الأخبار</h2>
         </div>
         <div class="row">
 
@@ -26,7 +26,7 @@ $news = query($conn, "select * from news limit 4");
                             <div class="blog-post-content">
                                 <ul>
                                     <li>
-                                        <i class="icofont-user-male"></i> <a href="#">Abdullah</a>
+                                        <i class="icofont-user-male"></i> <a href="#">mohamed sharaf</a>
                                     </li>
                                     <li><i class="icofont-wall-clock"></i> <?= $new['description'] ?></li>
                                 </ul>

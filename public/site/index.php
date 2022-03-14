@@ -76,7 +76,7 @@
 
 <!--*********************************************************-->
 <!-- Start Feedback Area  -->
-<?php include(frontcomponents("feedback.php")); ?>
+<?php // include(frontcomponents("feedback.php")); ?>
 <!-- End Feedback Area  -->
 <!--*********************************************************-->
 
