@@ -25,6 +25,11 @@ function layouts($path)
 
     return ROOT . "/public/admin/layouts/$path";
 }
+function websit($path)
+{
+
+    return "/public/site/$path";
+}
 
 function frontLayout($path)
 {

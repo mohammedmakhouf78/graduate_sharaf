@@ -8,7 +8,7 @@ if (isset($_POST['title'])) {
 
 
     $title = $_POST['title'];
-    validateString($title, "title", "error in title ", getpage("sliders/create.php"));
+    validateEmpty($title, "title", "error in title ", getpage("sliders/create.php"));
 
     $is_image = validateImage('imges', "error in image ", getpage("sliders/create.php"));
 

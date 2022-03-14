@@ -7,14 +7,16 @@
      <div class="row">
        <div class="col-lg-8 col-md-8">
          <p>
-           Hallo my frind
-           <a href="https://www.facebook.com" target="_blank">Mr??????????</a>
+         
+           <a href="https://www.facebook.com" target="_blank">الدكتور محمد الشوادفي</a>
+           <br>
+           <a href="https://www.facebook.com" target="_blank">الدكتور أيمن ابو النضر</a>
          </p>
        </div>
        <div class="col-lg-4 col-md-4">
          <ul>
-           <li><a href="#">Terms & Conditions</a></li>
-           <li><a href="#">Privacy Policy</a></li>
+           <li><a href="#">الظروف & مصطلحات</a></li>
+           <li><a href="#">سياسة خاصة</a></li>
          </ul>
        </div>
      </div>

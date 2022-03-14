@@ -1,7 +1,7 @@
 <?php
 
 
-$chefs = query($conn, "select * from chefs limit 3");
+$chefs = query($conn, "select * from chefs");
 
 
 
@@ -10,8 +10,8 @@ $chefs = query($conn, "select * from chefs limit 3");
 <section id="team" class="team-area ptb-100">
     <div class="container">
         <div class="section-title">
-            <span>Expert Chefs</span>
-            <h2>Meet the Team</h2>
+            <span>طهاة خبراء</span>
+            <h2>قابل الفريق</h2>
         </div>
         <div class="row">
             <div class="team-slides owl-carousel owl-theme">

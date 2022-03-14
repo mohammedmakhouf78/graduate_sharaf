@@ -12,8 +12,8 @@ $gallarys = query($conn, "select gallary.image,gallary.title from gallary limit 
         <div class="d-table-cell">
             <div class="container">
                 <div class="main-banner-content">
-                    <h1>Spicy & Tasty</h1>
-                    <h3>Delicious Egyptian food</h3>
+                    <h1> مطعم إلكتروني  </h1>
+                    <h3>إدارة نظام متكامل للإدارة مطعم إلكتروني</h3>
                     <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Now</a>
                 </div>
             </div>
@@ -51,22 +51,18 @@ $gallarys = query($conn, "select gallary.image,gallary.title from gallary limit 
             <div class="col-lg-6 col-md-12">
                 <div class="story-content">
                     <div class="section-title">
-                        <span>Our Story</span>
-                        <h2>Welcome to Resturant</h2>
+                        <span>قصتنا</span>
+                        <h2>مرحبا بكم في المطعم الإلكتروني</h2>
                     </div>
-                    <p>
+                    <h4>
                         <?= $gallarys[0]['title'] ?>
-                    </p>
+                    </h4>
+                   
                     <div class="story-quote">
-                        <div class="quote-content">
-                            <p>
-                                <?= $gallarys[0]['title'] ?>
-                            </p>
-
-                        </div>
+                        
                         <div class="quote-info">
-                            <h3>Amr bin Kulthum</h3>
-                            <span>Master Chef</span>
+                            <h2>أحب من يحبون الطعام</h2>
+                            <span>أمهر طباخ هو الجوع.</span>
                         </div>
                     </div>
                 </div>

@@ -9,8 +9,8 @@ $sliders = query($conn, "select * from sliders limit 6");
 <section id="menu" class="menu-area ptb-100">
     <div class="container">
         <div class="section-title">
-            <span>Discover</span>
-            <h2>Our Menu</h2>
+            <span>يكتشف</span>
+            <h2>القائمة لدينا</h2>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12">
@@ -18,11 +18,48 @@ $sliders = query($conn, "select * from sliders limit 6");
                     <ul class="tabs">
                         <li>
                             <a href="#">
-                                <i class="icofont-bell-pepper-capsicum"></i>
+                                <i class="icofont-lunch"></i>
                                 <br />
-                                Starter
+                                بداية
                             </a>
                         </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="icofont-lunch"></i>
+                                <br />
+                                غداء
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icofont-pizza"></i>
+                                <br />
+                                وجبة عشاء
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icofont-cup-cake"></i>
+                                <br />
+                                حلوى
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icofont-juice"></i>
+                                <br />
+                                مدمن على الكحول
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icofont-soft-drinks"></i>
+                                <br />
+                                مشروبات
+                            </a>
+                        </li>
+
 
                     </ul>
                     <div class="tab_content">
@@ -40,16 +77,11 @@ $sliders = query($conn, "select * from sliders limit 6");
                                             </div>
                                             <div class="food-menu-content">
                                                 <h3 class="mb-2">
-                                                    Cupcake Recipes
-                                                    <span class="menu-price"><?= $slider['discount'] ?></span>
+                                                    <?= $slider['title'] ?>
                                                 </h3>
                                                 <ul>
                                                     <li><?= $slider['description'] ?></li>
-                                                    <li><?= $slider['title'] ?></li>
-                                                    <li><?= $slider['description'] ?></li>
-                                                    <li><?= $slider['title'] ?></li>
-                                                    <li><?= $slider['description'] ?></li>
-                                                    <li><?= $slider['title'] ?></li>
+                                                    <li><?= $slider['discount'] ?></li>
                                                 </ul>
                                             </div>
                                         </div>

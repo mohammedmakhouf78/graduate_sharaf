@@ -10,7 +10,7 @@ $news = query($conn, "select * from news limit 4");
 <section class="instagram-area">
     <div class="instagram-item-list">
         <div class="instagram-follow">
-            <h3><a href="#">Follow On Instagram</a></h3>
+            <h3><a href="#">تابعنا على انستجرام</a></h3>
         </div>
         <div class="instagram-slides owl-carousel owl-theme">
 

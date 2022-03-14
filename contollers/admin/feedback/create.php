@@ -6,7 +6,7 @@ include __DIR__ . "/../../../functions/function.php";
 if (isset($_POST['name'])) {
 
     $name = $_POST['name'];
-    validateString($name, "name", "error in name ", getpage("feedback/create.php"));
+    validateEmpty($name, "name", "error in name ", getpage("feedback/create.php"));
 
     $job = $_POST['job'];
     validateEmpty($job, "job", "error in job ", getpage("feedback/create.php"));

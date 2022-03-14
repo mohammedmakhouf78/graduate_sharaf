@@ -3,8 +3,8 @@
 ?>
 <section class="reservation-area ptb-100" style=" background-image: url(<?= getImage("img/reservation-bg.jpg") ?>);">
     <div class="container">
-        <h2>Book A table Now !</h2>
-        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Now</a>
+        <h2>احجز طاولة الآن إلكتروني!</h2>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservationModal">احجز الآن</a>
     </div>
 </section>
 <!-- End Reservation Area  -->
@@ -12,7 +12,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Table Booking Reservation Form</h5>
+                <h5 class="modal-title">نموذج حجز الجدول</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"><i class="icofont-close"></i></span>
                 </button>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-lg-12 col-md-12">
                             <button type="submit" class="btn btn-primary">
-                                Book a Table
+                            احجز طاولة
                             </button>
                         </div>
                     </div>

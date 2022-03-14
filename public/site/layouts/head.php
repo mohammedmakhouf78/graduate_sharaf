@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Resturant - Home</title>
+    <title>مطعم - الصفحة الرئيسية</title>
     <meta name="Author" content="Mr Abdullah Mohammed" />
     <link rel="stylesheet" href="<?= asset('site/assets/css/bootstrap.min.css')?>" />
 

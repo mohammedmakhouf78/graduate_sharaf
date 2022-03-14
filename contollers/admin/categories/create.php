@@ -6,7 +6,7 @@ include __DIR__ . "/../../../functions/function.php";
 if (isset($_POST['name'])) {
 
     $name = $_POST['name'];
-    validateString($name, "name", "error in name ", getpage("categories/create.php"));
+    validateEmpty($name, "name", "error in name ", getpage("categories/create.php"));
     
     //image
     $is_valid = validateImage("image", "error in image ", getpage("categories/create.php"));
