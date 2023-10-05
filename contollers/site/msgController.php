@@ -6,16 +6,16 @@ include __DIR__ . "/../../functions/function.php";
 if (isset($_POST['first_name'])) {
 
     $name = $_POST['first_name'];
-    validateString($name, "name", "error in name ", getPageSite("index.php"));
+    validateEmpty($name, "name", "error in name ", getPageSite("index.php"));
 
     $lastname = $_POST['last_name'];
-    validatelast($lastname, "lastname", "error in name ", getPageSite("index.php"));
+    validateEmpty($lastname, "lastname", "error in name ", getPageSite("index.php"));
 
     $email = $_POST['email'];
-    validateEmail($email, "email", "error in email ", getPageSite("index.php"));
+    validateEmpty($email, "email", "error in email ", getPageSite("index.php"));
 
     $phone = $_POST['phone'];
-    validatePhone($phone, "phone", "error in phone ", getPageSite("index.php"));
+    validateEmpty($phone, "phone", "error in phone ", getPageSite("index.php"));
 
     $message = $_POST['message'];
     validateEmpty($message, "message", "error in message ", getPageSite("index.php"));
